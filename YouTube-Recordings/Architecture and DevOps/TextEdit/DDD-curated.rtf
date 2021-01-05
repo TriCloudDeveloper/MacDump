@@ -1,0 +1,197 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red24\green25\blue27;\red255\green255\blue255;\red38\green38\blue38;
+\red245\green245\blue245;\red26\green22\blue24;\red0\green0\blue0;\red31\green31\blue31;\red255\green255\blue255;
+\red4\green41\blue57;\red117\green117\blue117;}
+{\*\expandedcolortbl;;\cssrgb\c12549\c12941\c14118;\cssrgb\c100000\c100000\c100000;\cssrgb\c20000\c20000\c20000;
+\cssrgb\c96863\c96863\c96863;\cssrgb\c13333\c11373\c12157;\cssrgb\c0\c0\c0;\cssrgb\c16078\c16078\c16078;\csgray\c100000;
+\cssrgb\c0\c21366\c28831;\cssrgb\c53333\c53333\c53333;}
+\margl1440\margr1440\vieww12180\viewh14220\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+https://jpdeffo.medium.com/domain-driven-design-ddd-in-microservice-architecture-for-nutshell-19c7c579009a\
+
+\b0 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\b \
+Welcome to this video\'85\
+\
+
+\b0 Design Patterns are an effective way to describe solutions to complex problems in a particular context. They enable the expression of intent through a shared vocabulary when problem solving at the design stage as well as within the source code.\
+Patterns are language agnostic.\
+Design patterns are all about reuse of solutions.\
+Keep in mind, the goal of domain-driven design is to create better software by focussing on a model of the domain rather than the technology.\
+In a nutshell, 
+\fs34 \cf4 \cb5 \outl0\strokewidth0 \strokec4 DDD says that the most important thing about software is that it provides a useful model of a problem. If we get that model right, our software delivers value and makes new things possible.
+\fs32 \cf2 \cb3 \outl0\strokewidth0 \
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+\pard\pardeftab720\partightenfactor0
+\cf2 I
+\f0 n DDD, there are three patterns that are of specific interest - Aggregates, Factories,  and Repositories.\
+\cf4 \
+\pard\pardeftab720\partightenfactor0
+\cf2 Microservices\'a0have a symbiotic relationship with\'a0domain-driven design\'a0(DDD)\'97a\'a0design\'a0approach where the business\'a0domain\'a0is carefully modeled in software and evolved over time, independently of the plumbing that makes the system work.
+\fs24 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b\fs32 \cf2 \
+
+\b0 We will dive deep into different categories of software design patterns in another video, however in this video we will specifically focus on Domain Driven design approach. \
+We will go over some of the key concepts in domain driven design and then talk about  how you can apply the domain knowledge to software development.\
+\
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+Let me first introduce you to some of the key terminologies and their meaning so we have a base understanding of these key words used.\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 What is ubiquitous language
+\f0 ? - \cf0 \cb1 \kerning1\expnd0\expndtw0 There are domain experts and there are technologists. They do not often speak the same language and they posses distinctive skills to make a world class software development product. It is very important to have an understanding of a common language that will connect all the activities of those two. Such language is called Ubiquitous language that ties domain experts and technologists together. This ubiquitous language not only connects the domain experts, developers but also the code itself. \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\
+A 
+\f2\fs37\fsmilli18880 \cf4 \cb3 \outl0\strokewidth0 \strokec4 \'a0
+\i model
+\i0 \'a0is a map of a process\'a0or phenomenon that captures a useful property.
+\f1\fs32 \cf2 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 What is model-driven design - A design in which some subset of software elements corresponds closely to elements of a model. Also, a process of co-developing a model and an implementation that stay aligned with each other.
+\f0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf4 It is the crucial separation of the domain layer that enables MODEL driven design.\
+
+\f1 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \
+What is bounded context? - The delimited capability of a particular model. It gives a clear and shared understanding of what has to be consistent and what can develop independently. It i\cf6 s a semantic contextual boundary. Within the boundary each component has a specific meaning and does specific things. \
+Bounded context is where a model is implemented and that is where separate software artifacts is kept.\cf4 \
+Multiple Bounded Contexts are equated to multiple sub domain models\
+Normally, One bounded context per one Sub domain model\cf6 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf4 A typical Architecture is made of layers\
+Architectural components found inside a BOUNDED CONTEXT\
+Input Adapter layer - Security, User Interface, Representations\
+Application Service layer - Security, Transactions, Task coordination, Use case controller \
+Domain model layer - Entities, Business logic, Domain events\
+Output Adapter layer - Repositories, Documents, Cache, Messaging\
+\cf2 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \
+What is context strategy? - \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 What is context map? - A representation of the bounded context involved in a project and the actual relationships between them and their models
+\f0 \
+It \cf6 shows the associations and dependencies between sub domains. \
+Context mapping is an integration of core domain with other bounded contexts. One could be the Source in one bounded context and the same could be a consumer in another bounded context.\
+It is a pragmatic approach to dealing with the diversity models and processes on real large projects with multi-team/multi-subsystem development.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf4 There needs a way to mark the boundaries and relationships between different models. \
+The context mapping gives a global overview of the project\'92s contexts and the relationships between them. Once we have a context bounded, a process of continuous integration will keep the model unified.\
+
+\fs24 \cf6 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \
+What is core domain? - The distinctive part of the model, central to the user\'92s goals, that differentiates the application and makes it valuable. \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 W
+\f0 hat is Domain layer ? - The domain layer is responsible for domain logic and it is where the software expression of the domain model lives\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf7 \cb1 is t\cb3 hat portion of the design and implementation responsible for domain logic within a LAYERED ARCHITECTURE. The domain layer is where the software expression of the domain model lives. \cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+What is domain vision statement? - \
+\
+\
+What is an ENTITY? - \cf8 Entity in DDD contain data and behavior in the domain model, for example in an e-commerce application, an entity can be a customer, or a product\
+\cf2 \
+What is VALUE OBJECT? - An object that describes some characteristic or attribute but carries no concept of identity.\cf7 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf7 \cb9 \kerning1\expnd0\expndtw0 \CocoaLigature0 It is only for WHAT they are, not WHO or WHICH they are. Value objects are often passed as parameters in messages between objects. They are frequently transient, created for an operation and then discarded\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+What is aggregate? - An\'a0Aggregate\'a0is a specific\'a0software\'a0design pattern within DDD.\
+Aggregate\'a0as a \'93collection of related objects that we wish to treat as a unit.\'94\'a0\
+\'a0an\'a0Aggregate\'a0is a tree of objects. Like all trees, it has a root and a boundary.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf4 An AGGREGATE is composed of ENTITIES and there can be VALUE OBJECTS. One of the entities is the AGGREGATE ROOT.\cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+What is Domain-driven-design? - DDD\'a0is about modeling the real domain by first fully understanding it and placing all the terminology, rules, and logic into an abstract representation within your code, typically in the form of a domain model.\
+\
+What is a domain model? Why it matters to users - \cf10 \cb3 A system of abstractions that describes selected aspects of a domain and can be used to solve problems related to that domain.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf4 \cb3 The domain objects are free of the responsibility of displaying themselves, storing themselves, managing application tasks and so forth, can be focussed on expressing the domain model. This allows a model to evolve to capture essential business knowledge and put it to work.\
+\cf10 \cb3 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \
+\cf7 \cb3 What is a \cf0 \cb1 \kerning1\expnd0\expndtw0 Service? - It is a\cf7 \cb3 \expnd0\expndtw0\kerning0
+n operation offered as an interface that stands alone in the model, with no encapsulated state. \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf7 \cb9 \kerning1\expnd0\expndtw0 \CocoaLigature0 Service is an operation offered as an interface that stands alone in the model, without encapsulating state, as Entities and Value objects do. Service is named for an activity, a verb.\
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+What is refactoring? - Refactoring is the redesign of software in ways that DO NOT CHANGE its functionality.\
+Continuous and small code changes without affecting the functionality will require suite of automated unit tests.\
+\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+We will also talk about three principles for applying domain-driven design to large projects and enterprises\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf7 \cb3 Strategic design principles must guide design decisions to reduce the interdependence of parts and improve clarity without losing critical interoperability and synergy. 
+\f2\fs24 \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \
+Three broad themes or principles:\
+- Bounded Context - The model needs to be consistent throughout without contradictory or overlapping definitions\
+\
+- Distillation - It mainly focus on the peripheral issues in the domain and uses some supporting components that needs to be put into their proper perspective. So there is core and there are other elements in their supporting roles.\
+\
+- Large-scale structure - The relationships needs some system-wide design elements and patterns. One such pattern, RESPONSIBILITY LAYER, is to explore the implications of using such a structure.\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf7 \cb3 Large-scale structure brings consistency to disparate parts to help those parts mesh. 
+\f2\fs24 \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \
+\
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf4 \
+A few layered architecture has been a popular way of dividing a software system. \
+The main principle here is that any element of a layer is dependent only on other elements in the same layer or on elements of the layer beneath it. Communication upward must pass through some indirect mechanism and not direct\'85..\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+\
+How to decouple the domain objects from other functions of the system.There are sophisticated techniques to do to this.\
+\
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+END\
+\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\fs36 \cf4 \'a0Strong domain modeling coupled with programming best practices such as exploiting design patterns, refactoring, and test-driven development yield a principled yet practical approach to the development of large software systems.\
+\
+}

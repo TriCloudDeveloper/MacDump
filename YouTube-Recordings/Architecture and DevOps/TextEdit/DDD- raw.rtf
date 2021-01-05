@@ -1,0 +1,509 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\froman\fcharset0 Times-Roman;\f2\fswiss\fcharset0 Helvetica;
+\f3\fnil\fcharset0 Charter-Roman;}
+{\colortbl;\red255\green255\blue255;\red24\green25\blue27;\red255\green255\blue255;\red36\green41\blue38;
+\red0\green0\blue0;\red38\green38\blue38;\red31\green31\blue31;\red117\green117\blue117;\red26\green22\blue24;
+\red255\green255\blue255;\red59\green35\blue34;\red52\green0\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c12549\c12941\c14118;\cssrgb\c100000\c100000\c100000;\cssrgb\c18824\c21176\c20000;
+\cssrgb\c0\c0\c0;\cssrgb\c20000\c20000\c20000;\cssrgb\c16078\c16078\c16078;\cssrgb\c53333\c53333\c53333;\cssrgb\c13333\c11373\c12157;
+\csgray\c100000;\csgenericrgb\c23317\c13541\c13291;\cssrgb\c27225\c13939\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww12180\viewh9660\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+
+\f1\i\b0 \cf4 \cb3 \outl0\strokewidth0 \strokec4 Application Layer [his name for Service Layer]: Defines the jobs the software is supposed to do and directs the expressive domain objects to work out problems. The tasks this layer is responsible for are meaningful to the business or necessary for interaction with the application layers of other systems. This layer is kept thin. It does not contain business rules or knowledge, but only coordinates tasks and delegates work to collaborations of domain objects in the next layer down. It does not have state reflecting the business situation, but it can have state that reflects the progress of a task for the user or the program.\cb1 \
+\cb3 Domain Layer (or Model Layer): Responsible for representing concepts of the business, information about the business situation, and business rules. State that reflects the business situation is controlled and used here, even though the technical details of storing it are delegated to the infrastructure. This layer is the heart of business software.\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\i0\b \cf2 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+
+\f1\i\b0 \cf4 \cb3 \outl0\strokewidth0 \strokec4 Now, the more common mistake is to give up too easily on fitting the behavior into an appropriate object, gradually slipping toward procedural programming.\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\i0\b \cf2 \cb3 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f2\b0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl460\sa240\partightenfactor0
+
+\f1\b0\fs40 \cf5 \cb3 The 
+\fs29\fsmilli14667 REPOSITORY 
+\fs40 will delegate to the appropriate infrastructure services to get the job done. Encapsulating the mechanisms of storage, retrieval, and query is the most basic feature of a 
+\fs29\fsmilli14667 REPOSITORY 
+\fs40 implementation. 
+\fs24 \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f2 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sl520\sa240\partightenfactor0
+
+\f1\fs45\fsmilli22667 \cf5 \cb3 \expnd0\expndtw0\kerning0
+The 
+\fs40 REPOSITORY 
+\fs45\fsmilli22667 encapsulates the underlying data store. 
+\fs24 \cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f2 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+\
+\
+Domain Driven design approach is a hard to learn skill but it has exceptional value for solving complexity of software development. It is an art, an art of domain modeling that is not so simple to acquire and often missed to adopt in practice. It is a philosophy called domain-driven design.\
+\
+Hence this attempt is taken to try to simplify and learn as much at the cost of dilution or missing some portions. Introduce some of the basic concepts and value of DDD - Domain-driven Design.\
+\
+The is by no means a distillation of DDD or claims to be. It is just an attempt to get as much as possible with less difficulty in understanding. Hope you feel that way through this video.\
+\
+-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0\
+\
+\
+-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0\
+\
+\
+-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0\
+\
+Technical architectures solve technical problems such as - networking or data persistence \
+Domain oriented architectures help to solve problems with application and domain model\
+\
+M
+\f1\fs36 \cf6 \cb3 \expnd0\expndtw0\kerning0
+ake most effective use of off-the-shelf components in a mixture with in-house development.
+\f2\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs36 \cf6 \cb3 \expnd0\expndtw0\kerning0
+\
+knowledge of object modeling and design.\
+\
+Modeling for transactional integrity and distributed systems\
+\
+Patterns and techniques to tighten models and their connection to code.\
+\
+Model supple design with context map\
+\
+
+\f2\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+The basic principles and processes needed to develop the useful sort of models.\
+\
+There are some basics to be familiar with and get to know them so as we go along it becomes relatively easier to learn.\
+\
+You should not separate concepts from the implementation because it is not simple to build a conceptual model without considering implementation issues.\
+\
+\
+\
+\
+Rich domain models evolve through iterations of good design and they continuous become better of product development, a fabric if you will, to meet the ongoing needs of the organization.\
+\
+When there are complex domains (business or technical) this framework approach that is a synthesis of well framed best practices and systematic domain-driven design will help to solve those.\
+\
+Lots of pitfalls begin with the application lacks a domain model, a common language, unstructured design, \
+\
+Building a subsystem derived from the knowledge of domain experts with ever-changing business rules is highly challenging. \
+\
+Firstly let us get to know about some terms and understand what we mean by that and if it synchronizes with your understanding\
+\
+The concepts of domain driven design\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\'97\'97 \'97\'97\'97 \'97\'97 \'97\'97 \'97\'97 \'97\'97\'97 \'97\'97 \
+\
+Three patterns - Aggregates, Factories,  Repositories.\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+Using factories to create and reconstitute complex objects and aggregates keeping the internal structure encapsulated, finally repositories providing the means of finding and retrieving the persistent objects while encapsulating the immense infrastructure involved.\
+\
+Factories and repositories operate on Aggregates, encapsulating the complexion of specific life cycle transitions.\
+\
+\
+Model exploration approach especially in an agile or lean setting. \
+SCENARIO\
+1) tell a story - be concreted and specific; walk through and flesh out; refocus on hard part and core domain\
+2) Collect reference scenarios; capture bits of model, with rationale\
+MODEL\
+3) propose a model; walk through scenarios as EVENTS and STATES;\
+CODE PROBE\
+4) Experiment in code; refine language; cheap prototypes; script a scenario\
+\
+\
+\
+DDD is focused on accelerating the development of software, in situation with very complex domain; situation where the communication between tech people and who knows the domain tend to break down.\
+\
+Software gets complicated and convoluted\
+\
+Strategic design portion of DDD\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97 \
+Emphasis separation of some parts from others that allows elegant design co-exist with legacy systems. \
+Establish boundaries, isolating different designs\
+\
+Focus design efforts on most valuable parts\
+\
+Tactical portion of DDD\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97 \
+Collaboration exploration of models\
+Emphasis on language of domain\
+\
+\
+How to design good software  is not about teaching a programming language or how to operate the mechanics of a framework.\
+\
+\
+Philosophical - explain the concepts in an abstract way\
+Actors and their interactions\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \cb1 \kerning1\expnd0\expndtw0 The basic definitions \
+\'97\'97 \'97\'97\'97 \'97\'97\'97  \'97\'97 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl520\partightenfactor0
+
+\f3\fs42 \cf7 \
+
+\f2\fs24 \cf2 \
+D
+\f3\fs42 \cf7 evelopers, architects,
+\b domain experts
+\b0 \'a0and anyone else involved in a project have to speak the same language, this in DDD methodology is called Ubiquitous language.\
+\
+Value objects have no identity; they are of value because of their attributes only.\'a0\
+\'a0Value objects generally don\'92t live on their own; they are typically, but not always, attributes of an entity. For example, in some case the customer address in an e-commerce system can be view as value objects.\
+\
+
+\f2\fs24 \cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls1\ilvl0\cf8 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\ul Domain:\cb1 \ulnone \uc0\u8232 \cb3 A domain\'a0is the sphere of knowledge and activity around which the application logic revolves.\
+\pard\tx720\pardeftab720\qj\partightenfactor0
+\cf8 \cb1 \
+Subdomain:  is a sub-part of your overall business domain and may represent a single, logical domain model. \cf5 \
+
+\b \cf8 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls2\ilvl0\cf8 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\ul Model\'a0:\cb1 \ulnone \uc0\u8232 \cb3 A system of abstractions that describes selected aspects of a domain and can be used to solve problems related to that domain.
+\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \
+In DDD, \cf9 focus is mapping activities, tasks, events, and data within a problem domain into the technology artifacts of a solution domain.\
+\
+The\'a0Ubiquitous language\'a0is defined as a language structured around the domain model and used by all team members to connect all the activities of the team with the software.\
+\
+\
+\
+Relationships between two Bounded Contexts-\
+	- customer - supplier\
+	- conformist - the downstream bounded context does not get any specific support from upstream bounded context\
+\
+	- anticorruption layer - ACL - downstream bounded context translates the ubiquitous language from upstream bounded context\
+\cf6 \
+	- open house service - OHS - upstream bounded context provides an interface (API) or a protocol that is open and easy to use.\
+\
+	 - published language - best for 3rd parties. Upstream bounded context provides an exchange language - xml, Json, or wire format version like protobuf, avro\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf6 	 - separate ways - not useful\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf5 \expnd0\expndtw0\kerning0
+\
+\
+\
+Distillation - is a \cb3 process of separating the components of a mixture to extract the essence in a form that makes it more valuable and useful. In software design, the abstraction of key aspects in a model, or the partitioning of a larger system to bring the CORE DOMAIN to the fore. \cb1 \
+\
+It is needed \cf6 \cb3 to decouple the domain objects from other functions of the system. There are sophisticated techniques to do this. \
+\
+It is impractical to implement model driven objects. \
+It is important to not to diffuse domain related code into behavior of UI widgets and database scripts and other support code. \
+\
+\
+Each layer specializes in certain aspect of a computer program.\
+\
+The Domain layer (Model layer) is responsible for representing concepts of the business, information about the business situation, and business rules. State that reflects the business situation is controlled and used here, even though the technical details of storing it are delegated to the infrastructure.\
+\
+It is the crucial separation of the domain layer that enables MODEL driven design\
+\
+The domain objects are free of the responsibility of displaying themselves, storing themselves, managing application tasks and so forth, can be focussed on expressing the domain model. This allows a model to evolve to capture essential business knowledge and put it to work.\
+\
+A model is meaningless unless it is logically consistent. The most fundamental requirement of a model is that it be internally consistent; that its term always have the same meaning, and that it contain no contradictory rules.\
+\
+It is necessary to allow multiple models to develop in different parts of the system. Total unification of the domain model for a large system will not be feasible or cost effective.\
+\
+There needs a way to mark the boundaries and relationships between different models. \
+It all starts with mapping the current terrain of the project. The context mapping gives a global overview of the project\'92s contexts and the relationships between them. Once we have a context bounded, a process of continuous integration will keep the model unified.\
+\
+\
+Shared Kernel\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 LAYERED ARCHITECTURE\'a0is used in most systems today, under various layering schemes. Many styles of development can also benefit from layering. However,\'a0domain-driven design requires only one particular layer to exist.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf6 EXAMPLE EXAMPLE EXAMPLE \'97 Online Banking \
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 An application provides various capabilities for maintaining bank accounts. One feature is funds transfer, in which the user enters or chooses two account numbers and an amount of money and then initiates a transfer.\
+\
+The \'a0domain layer,\'a0not the application layer, is responsible for fundamental business rules\'97in this case, the rule is \'93Every credit has a matching debit.\'94\
+\
+\
+Subdomains\
+	Accounts, Catalog, Orders, Fulfillment, Shipping\
+\
+\cf9 \
+\cf6 Understand the core concepts of your domain model, and the language is focused and intact.\
+\
+There are two fundamental strategic design tools available with DDD \
+- Bounded Context \
+- Ubiquitous language\
+\
+Bounded context should closely hold all concepts that are core to the strategic initiative. \
+The concepts that survive this stringent application of core-only filtering are part of the Ubiquitous language that owns the Bounded Context.\
+\
+So knowing the core is the key. \
+\
+Domain experts mental model that is a good place to start to form the foundation of the Ubiquitous language.\
+Dig into the business model with domain experts.\
+\
+Open conversation, exploration, and challenges to the current knowledge base result in deeper insights about the core domain.\
+\
+\
+\
+EXAMPLE EXAM:LE EXAMPLE - Context Mapping\
+\
+There are three different POLICY types in three different bounded contexts in the INSURANCE enterprise. Where will be the \'93Policy of record\'94?\
+Since it originates in one bounded context that will become the policy of record and the id will be published by sending a domain event (called PolicyIssued) for other bounded contexts to use as needed.\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 Each\'a0bounded context\'a0contains a domain model that represents a particular subdomain of the larger application. Within a\'a0bounded context, apply tactical DDD patterns to define entities, aggregates, and domain services.\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf6 \
+Asynchronous integration communication is obtained by use of asynchronous Messaging . \
+Typically an AGGREGATE in one Bounded context publishes a domain event into the messaging layer.\
+The consumer bounded context can subscribe to such domain events and can in turn create a new AGGREGATE or modify an existing AGGREGATE.\
+\
+\
+AGGREGATES are the concepts like AGGREGATES inside the bounded context.\
+There is also VALUE OBJECTS inside a bounded context.\
+\
+\
+\
+VALUE OBJECT is just  NOT a thing or simply a VALUE. Mostly they are immutable as a whole. It does not have a unique identity and \
+\
+There are many messaging mechanisms. MESSAGING PATTERNS (what are they??)\
+	Reactive - at least once delivery\
+	\
+\
+\
+\
+\
+DDD can be used with any of these architecture - \
+Event driven architecture ; Event sourcing\
+CQRS\
+Reactive and Actor model - Reactive messaging patterns\
+SOA\
+Microservices Architecture - some consider a microservice to be much smaller than a DDD bounded context.\
+\
+\
+\
+The Domain model should be free of technology even though the architecture may have used technologies all over. Thats why transactions are managed by the Application service layer and not be the domain model\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+\
+Sometimes multiple sub domains in one BOUNDED CONTEXT but that may not be most optimal modeling outcome.\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf6 There are 3 primary types of sub domains:\
+\
+Core domain - This is where DDD is strongly and mostly employed.\
+\
+	there could be more than one bounded context in a core domain. If so, they will need to be completed separated by using a module (package in Scala and Java or namespace in C#).\
+\
+\
+Supporting subdomain - \
+Generic subdomain - \
+\
+\
+M\
+\
+\
+\
+\
+-=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-=-=\'97=-==\'97=-=-=-=\
+\
+\
+\
+From the Book\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf5 \cb1 \
+I. What Is Domain-Driven Design and Why Care? \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb3 -=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-=-=\'97=-==\'97=-=-=-=-=-=-
+\f1 \cf5 \cb1 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f2 \cf5 \cb10 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf11 \kerning1\expnd0\expndtw0 \CocoaLigature0 These excerpts from Part I of the book walk you through the fundamental principles of domaindriven design and some of the benefits of applying it.\
+Contrasting three projects concretely illustrates how design style can be a factor in success and failure. xix-xxi\
+Why design style is an inextricable factor in the development process. xxii-xxiv\
+The benefits of committing the whole team to domain-driven design. xxvii\
+What is a model? 2-4\
+The heart of software and why it gets neglected. 4-6\
+Knowledge Crunching: How a team can accumulate, distill and apply domain knowledge to software development 12-15 (from "Ingredients of...")\
+Ubiquitous Language: How to bring about a clearer and more dynamic flow of domain knowledge throughout the project. 24-27\
+	Example 27-30\
+	Consequences 32-34\
+How documents & diagrams can work for a project instead of just being work. 35-40\
+How to make modeling relevant to the the goals of a software project: ModelDriven Design. 47-50\
+Why models matter to users. 57-59\
+The necessity of eliminating the distinction between modelers and programmers. 60-62\
+\cf12 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf6 \cb3 \expnd0\expndtw0\kerning0
+-=-\CocoaLigature1 -=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-=-=\'97=-==\'97=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97=\CocoaLigature0 -\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf12 \cb10 \kerning1\expnd0\expndtw0 II Building Blocks\
+My Notes\
+Isolating the Domain\
+	Look at the elements of model and decouple the domain objects from other functions of the system.\
+	The other concepts could be related only to software technology and actual domain related\
+\
+	What are the techniques for isolation? LAYERED ARCHITECTURE (loosely coupled, w/design dependencies in one direction) \
+	Identify all tasks that are worker utilities and not the actual business logic.\
+	Be cautious as to NOT to embed the business logic inside these utility tasks\
+	Separation of concerns is the key\
+	\
+	Infrastructure is provided in the form of services\
+	sometimes infrastructure implemented in an intrusive way - as subclass or structured method sig.\
+\
+	Architectural frameworks like - J2ee implementing Entity beans in application layer included domain objects that bogged down performance/ development\
+	instead POJO, generic java objects, can be used for most business logic\
+\
+	Architectural frameworks evolve around technical aspects of an application - automation or pre-fabricate technical implementation\
+\
+	Smart UI pattern is an anti-pattern in DDD and will negate many of the DDD benefits\
+\
+\
+A model expressed in software\
+	connecting model and implementation has to be done a the detail level.\
+	what are those model elements? There are 3 patterns of model elements that express the model.\
+	They are the building Blocks that embody the model in software.\
+	Entities, Value Objects, Services\
+		Entity is an object that represent something, with continuity and identity\
+		Value object is an attribute that describes the state of something\
+		Services are actions or operations, which is another aspect of the domain\
+\
+	MODULES are part of the model, that reflect concepts in the domain\
+\
+	ASSOCIATIONS between objects. Traversable association\
+	Bidirectional association may be hard to maintain between entities but it just makes no sense between value objects.\
+	completely eliminate bidirectional associations between value objects.\
+\
+\
+\
+	\
+	Entity is something that has continuity through a life cycle and distincts independent of attributes\
+	Two objects can have same identity but different attributes\
+	Attributes associated with identity stay with the ENTITY\
+\
+	Value Object is an object that represents a descriptive aspect of the domain with no conceptual identity\
+	These are the objects that describe things\
+\
+\
+\
+	Services\
+\
+	When a significant process or transformation in the domain is not a natural responsibility of an entity or value object, add an operation to the model, as a standalone interface declared as a SERVICE. And it should be stateless\
+\
+\
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf6 \cb3 \expnd0\expndtw0\kerning0
+III. What Constitutes a Useful Model-Driven Design and How to Go About Finding Such a Design (~ 1 hr)\
+-=-\CocoaLigature1 -=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-=-=\'97=-==\'97=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97=\CocoaLigature0 -\
+True story: How model-driven design rescued a project and created unexpected\
+opportunities.\
+193-203\
+How software experts can work with domain experts to explore and refine models. 207-210\
+Supple Design: How a system can become easier to extend and adapt rather than\
+ossifying into legacy\
+243-245\
+Overview of the rhythm of domain-driven design and how it allows for upside\
+surprise opportunities to emerge.\CocoaLigature1 \
+\
+\
+-=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-=-=\'97=-==\'97=-=-=-=\
+\
+IV. Strategic Design: Team Decisions That Affect the Trajectory of the Entire Project (~ 2 hr)\
+-=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-=-=\'97=-==\'97=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-\
+\
+Introduction to three principles for applying domain-driven design to large projects and enterprises. 328-329\
+Bounded Context: Strategies for dealing with the inevitability of multiple viewpoints and conflicting needs. 331-338\
+	How much integration do you need? How can you structure relationships between teams to get it? 341-371,\
+										(headings and bold)\
+	Whimsical, non-technical example 378-381\
+	Broad tradeoffs between context strategies Figure 14.13 (on p. 388)\
+Distillation: How do you focus on your central problem and keep from drowning in a sea of side issues? 400-405\
+	A Tale of Two Time Zones: A right way and a wrong way to deploy your \
+	people to tackle essential supporting components 410-412\
+	Reducing project risk by tackling the core domain early 413-414\
+	Crafting a domain vision statement 415-416\
+Large-scale structure: How to make a sprawling system comprehensible and  encourage consistency across subsystems. 439-442\
+	How to have structure without stifling development 444-446\
+	Several specific techniques for large-scale structure are discussed, but are skipped in this tour.\
+	Non-technical example of how a large-scale structure allowed thousands of people to contribute to the AIDS Memorial Quilt 478(bottom)-479\
+	Putting the pieces together to develop a design strategy 490-497\
+\
+V. Conclusion (~1/4 hour)\
+-=-=-=-=-=-=-=-=-==-=-=-=-=-=\'97==-=-=-=\'97=-==\'97=-=-=-=\
+\
+Tracking five real domain-driven design projects and their long-term outcomes. 500-505\
+The future of domain-driven design 505-506\
+\
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\
+\
+My Notes on \
+\
+\
+\
+-=-=-=-=-=-=-=\
+}
