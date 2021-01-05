@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="//m.addthis.com/live/red_lojson/300lo.json?si=5b04f78be04c3f2f&amp;bkl=0&amp;bl=1&amp;sid=5b04f78be04c3f2f&amp;pub=&amp;rev=v8.3.13-wp&amp;ln=en&amp;pc=men&amp;cb=0&amp;ab=-&amp;dp=localhost&amp;fp=frrole%2F&amp;fr=&amp;of=0&amp;pd=0&amp;irt=1&amp;vcl=1&amp;md=0&amp;ct=1&amp;tct=0&amp;abt=0&amp;cdn=0&amp;pi=1&amp;rb=0&amp;gen=100&amp;chr=UTF-8&amp;mk=consumer%20intelligence%2Cconsumer%20insights%2Cconsumer%20analytics%2Caudience%20intelligence%2Csocial%20listening%2Csocial%20analytics%2Csocial%20media%20analytics%2Cmarket%20research%2Cmarketing%20research%2Con-demand%20research&amp;colc=1527052171858&amp;jsl=1&amp;uvs=5b04f41cb1fce576001&amp;skipb=1&amp;callback=addthis.cbs.oln9_44653651479039480">
+        </script>
+        <title>thebactrak</title>
+        
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <base href=".">                
+        <!--Meta tags-->
+        
+        <meta name="google-site-verification" content="Q7K8EWiIhGAaB-AodgK2TzxXClxW9_fsEpWEovpDJQ8">
+        <meta name="description" content="Recruiter Profile Searching- AI built profile for every individual. Make your product more consumer-aware, increase your product’s value and utility for customers resulting in better than expected ROI.">
+        <meta name="keywords" content="consumer intelligence, consumer insights, consumer analytics, audience intelligence, social listening, social analytics, social media analytics, market research, marketing research, on-demand research, influencer analysis, owned media insights, campaign insights">
+        <meta name="author" content="thebactrak">
+
+        <meta property="og:url" content="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Recruiter Profile Searching - AI built profile for every individual">
+        <meta property="og:description" content="Recruiter Profile Searching - AI built profile for every individual. Make your product more consumer-aware, increase your product’s value and utility for customers resulting in better than expected ROI.">
+        <meta property="og:image" content="img/logo.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/">
+        <meta name="twitter:title" content="Recruiter Profile Searching - AI built profile for every individual"> 
+        <meta name="twitter:description" content="Recruiter Profile Searching - AI built profile for every individual. Make your product more consumer-aware, increase your product’s value and utility for customers resulting in better than expected ROI.">
+        <meta name="twitter:image" content="img/logo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        
+        <!--Meta tags-->
+        <!-- Google Tag Manager -->
+        <script async="" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/analytics.js.download"></script><script src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/1945684079093458" async=""></script><script async="" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/fbevents.js.download"></script><script async="" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/gtm.js.download"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5M33FT6');</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                setInterval(function(){
+                    var uname = $('#uname_session').val();
+                    var pwd = $('#pwd_session').val();
+                $.ajax({
+                        url: "ajax_function.php",
+                        type: "post",
+                        data: {"action":"get_count","uname":uname,"pwd":pwd},
+                        success: function (response) {
+                            $('#ses_count').html(response);
+                            if(response == 5)
+                            {
+                                $('.limit-msg').removeClass('hidden');
+                                $('#top-textbox-holder').addClass('hidden');
+                            }
+                            else
+                            {
+                                $('.limit-msg').addClass('hidden');
+                                $('#top-textbox-holder').removeClass('hidden');   
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                           console.log(textStatus, errorThrown);
+                        }
+                    });
+                  }, 1000);
+
+
+                function validateEmail(email) {
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(email);
+                }
+                $("#signupClick").click(function(){
+                    $("#id011").css("display", "block");
+                    $("#id01").css("display", "none");
+                });
+                
+                $("#signupformid").submit(function(){
+                   var semail = $('#semail').val();
+                   var spwd = $('#spwd').val();
+                   var srpwd = $('#srpwd').val();
+                    if(validateEmail(semail) == false)
+                    {
+                        $('#err_the').html('Email Invalid');
+                    }    
+                    else
+                    {
+                        if(spwd != srpwd)
+                        {
+                            $('#err_the').html('password / confirm password not match');
+                        }
+                        else
+                        {   
+                            var URL_BASE_NEW = $('#URL_BASE_NEW').val();
+                            $.ajax({
+                                url: "ajax_function.php",
+                                type: "post",
+                                data: {"action":"email_check","semail":semail,"spwd":spwd},
+                                success: function (response)
+                                {
+                                    $('#email_result').val(response);
+                                   if(response == 'yes')
+                                    {
+                                        $('#err_the').html('Email ID Alerady Exists');
+                                        return false;
+                                    }
+                                    else
+                                    {
+                                        alert('Register Successfully');
+                                        window.location.href = URL_BASE_NEW;
+                                    }
+                                },
+                                error: function(jqXHR, textStatus, errorThrown) {
+                                   console.log(textStatus, errorThrown);
+                                }
+                            });
+                        }
+                    }
+                    return false;
+                });
+            });
+        </script>
+        <!-- End Google Tag Manager -->
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/favicon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png">
+        
+        <!-- CSS -->
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/iklikkgplppchknjhfkmkjnnopomaifc">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/bootstrap.min.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/font-awesome.min.css">
+        <!--<link href="css/clean-blog.css?v=0a4fdff" rel="stylesheet">-->
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/style.min.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/style-responsive.min.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/animate.min.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/vertical-rhythm.min.css">
+        
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/magnific-popup.min.css">
+        
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/style-manual.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/new-style.css">
+        <link rel="stylesheet" type="text/css" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/owl.theme.default.css">
+        <link rel="stylesheet" type="text/css" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/persona.css">
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1945684079093458');
+            fbq('track', 'PageView');
+            
+        </script>
+        
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1945684079093458&ev=PageView&noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//css/custom.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//css/custom1.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/sweetalert.css">
+        <link rel="stylesheet" type="" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/iziToast.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/ds-landing.css">
+        <link rel="stylesheet" href="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/override.css"> 
+    </head>
+        <body class="appear-animate" cz-shortcut-listen="true">
+        <input type="hidden" name="URL_BASE_NEW" id="URL_BASE_NEW" value="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/">
+        <input type="hidden" name="URL_BASE_NEW" id="uname_session" value="<?php echo $_SESSION['uname']; ?>">
+        <input type="hidden" name="URL_BASE_NEW" id="pwd_session" value="<?php echo $_SESSION['psw']; ?>">
+            <section style="color: #000;" class="home-section" id="home1">
+                <div style="text-align:center; padding-bottom:70px;" class="mobile-side-padding">
+                    <img id="cmd1" style="cursor:pointer;right: 5%;position: absolute;width: 4%;height: 7%;top: 10%;" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/img/down.png">
+                    <a id="btn-Convert-Html2Image" href="Javascript:;">Download</a>
+                    <button class="meta_info_button">
+                        <i class="fa fa-info" aria-hidden="true"></i></button>                  
+                    <div class="meta_info_container">
+                      <div class="meta_info_label last_modified_at_metadata mt-10 mb-10"><strong>Last Modified At: </strong> N/A</div>
+                      <button class="update_button_analysis" data-url="//api.frrole.com/user-profile.php?apikey=chrexec_f8d5983d19436c6f00e9be4ca983b38a&amp;persona=employee,customercare&amp;userid=vignesh&amp;nocache=true">Update Analysis</button>
+                      <div class="status_of_update mb-10"></div>
+                    </div>
+                    <img id="dp-img" src="http://pbs.twimg.com/profile_images/647162905939447808/donkcEBj_200x200.jpg" alt="" onerror="imgError(this);">
+                    <p id="d-name">Vignesh</p>
+                    <p id="u-id">@vignesh</p>
+                    <span style="width:30px;height:3px;background-color:#708fc3;"></span>
+                    <p id="p-descr" style="width:50%">algorithms | coding enthusiast</p>
+                    <div style="text-align:center" id="websites_hero"></div>
+                    <div class="horizontal-icons-div mt-50">
+                        <!-- <div class="horizontal-block">
+                            <img src="dsense/user.svg" alt="">
+                            <div class="in-bl txt-l">
+                                <span style="color:#708fc3" class="out-of-text-top">Real Person</span>
+                                <span class="horz-text" id="real-person" style="color:white"></span>
+                            </div>
+                        </div> -->
+                        <div class="horizontal-block" style="display: none;">
+                            <img src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/dob.svg" alt="">
+                            <div class="in-bl txt-l">
+                                <span style="color:#708fc3" class="out-of-text-top">Marital Status</span>
+                                <span class="horz-text" style="color:white" id="marital"></span>
+                            </div>
+                        </div>
+                        <div class="horizontal-block">
+                            <img src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/age.svg" alt="">
+                            <div class="in-bl txt-l">
+                                <span style="color:#708fc3" id="agelabel" class="out-of-text-top">Age</span>
+                                <span class="horz-text" style="color:white" id="age">31</span>
+                            </div>
+                        </div>
+                        <div class="horizontal-block">
+                            <img src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/location.svg" alt="">
+                            <div class="in-bl txt-l">
+                                <span style="color:#708fc3" class="out-of-text-top">Location</span>
+                                <span class="horz-text .capitalize-txt" style="color:white" id="location">united states</span>
+                            </div>
+                        </div>
+                        <div class="horizontal-block">
+                            <img src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/device.svg" alt="">
+                            <div class="in-bl txt-l">
+                                <span style="color:#708fc3" class="out-of-text-top">Devices Owned</span>
+                                <span class="horz-text" id="devices" style="color:white">android device, laptop</span>
+                            </div>
+                        </div>
+                        <div class="horizontal-block" style="display: none;">
+                            <img src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/profession.svg" alt="">
+                            <div class="in-bl txt-l">
+                                <span style="color:#708fc3" class="out-of-text-top">Profession</span>
+                                <span class="horz-text" id="profession" style="color:white"></span>
+                            </div>
+                        </div>
+                        <div class="horizontal-block">
+                            <img src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/language.svg" alt="">
+                            <div class="in-bl txt-l">
+                                <span style="color:#708fc3" class="out-of-text-top">Languages Spoken</span>
+                                <span class="horz-text" id="languages" style="color:white">English (95%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social_profiles_container align-center hidden-sm hidden-xs mt-30" style="padding:20px 0;"><div class="social_profiles_url"><a class="ia_social_network_link ia_social_network_elem" target="_blank" href="https://about.me/vignesh"><span style="text-decoration:underline"><strong>aboutme</strong></span><i class="fa fa-link fa-fw" aria-hidden="true"></i><span>@vignesh</span> </a><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/aboutme.png"></div><div class="social_profiles_url"><a class="ia_social_network_link ia_social_network_elem" target="_blank" href="https://www.linkedin.com/in/vsethura"><span style="text-decoration:underline"><strong>linkedin</strong></span><i class="fa fa-link fa-fw" aria-hidden="true"></i> </a><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/linkedin.png"></div><div class="social_profiles_url"><a class="ia_social_network_link ia_social_network_elem" target="_blank" href="https://twitter.com/vignesh"><span style="text-decoration:underline"><strong>twitter</strong></span><i class="fa fa-link fa-fw" aria-hidden="true"></i><span>@vignesh</span> <span>Followers: 26</span></a><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/twitter.png"></div><div class="social_profiles_url"><a class="ia_social_network_link ia_social_network_elem" target="_blank" href="http://klout.com/vignesh"><span style="text-decoration:underline"><strong>klout</strong></span><i class="fa fa-link fa-fw" aria-hidden="true"></i><span>@vignesh</span> </a><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/klout.png"></div></div>
+                    <div class="social_profiles_container1 align-center hidden-lg hidden-md" style="padding:20px 0;"><a class="social_profiles_url" target="_blank" href="https://about.me/vignesh"><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/aboutme.png"></a><a class="social_profiles_url" target="_blank" href="https://www.linkedin.com/in/vsethura"><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/linkedin.png"></a><a class="social_profiles_url" target="_blank" href="https://twitter.com/vignesh"><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/twitter.png"></a><a class="social_profiles_url" target="_blank" href="http://klout.com/vignesh"><img class="social_profiles_image" src="https://app.frrole.com/custom/socialicons/klout.png"></a></div>
+                </div>
+                <div class="text-rotate" style="bottom: 80px; text-shadow: black 0px 0px 18px; opacity: 0.082236;">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Social activity
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="page-section" style="color:#000;background-color:#11131e" id="personality_section">
+                <div class="container relative">
+                    <div class="close_section_popup" id="personality_section_close">X</div>
+                    <div class="download_section" id="personality_section_download"><i class="fa fa-download" aria-hidden="true"></i></div>
+                     <div class="share_section btn-group ">
+                    </div>                         
+                    <h1 style="color:white" class="section-head" data-toggle="tooltip" title="" data-original-title="The traits of a user\'s personality as measured against Big Five model">Personality</h1>
+                    <div id="personality_container"><div class="col-md-12"><div class="horizontal-icons-div" style="text-align:center;margin-bottom: 20px"><div class="horizontal-block personality-trait"><div class="in-bl" data-toggle="tooltip" title="Energy, positive emotions, assertiveness, sociability and the tendency to seek stimulation in the company of others, and talkativeness. High extraversion is often perceived as attention-seeking, and domineering. Low extraversion causes a reserved, reflective personality, which can be perceived as aloof or self-absorbed."><span class="horz-text" style="color:#5f50f2;" id="extraversion">slightly reserved</span><span class="out-of-text ptraits">Extraversion</span></div></div><div class="horizontal-block personality-trait"><div class="in-bl" data-toggle="tooltip" title="A tendency to experience unpleasant emotions easily, such as anger, anxiety, depression, and vulnerability. A high need for stability manifest as stable and calm personality, but can be seen as uninspiring and unconcerned. A low need for stability causes a reactive and excitable personality, often very dynamic individuals, but they can be perceived as unstable or insecure."><span class="horz-text" style="color:#2ba271" id="emotional_stability">slightly sensitive</span><span class="out-of-text ptraits">Emotional Stability</span></div></div><div class="horizontal-block personality-trait"><div class="in-bl" data-toggle="tooltip" title="A tendency to be compassionate and cooperative rather than suspicious and antagonistic towards others. It is also a measure of one's trusting and helpful nature, and whether a person is generally well-tempered or not. High agreeableness is often seen as naive or submissive. Low agreeableness personalities are often competitive or challenging people, which can be seen as argumentative or untrustworthy."><span class="horz-text" style="color:#ff860d" id="agreeableness">neutral</span><span class="out-of-text ptraits">Agreeableness</span></div></div><div class="horizontal-block personality-trait"><div class="in-bl" data-toggle="tooltip" title="A tendency to be organized and dependable, show self-discipline, act dutifully, aim for achievement, and prefer planned rather than spontaneous behavior. High conscientiousness often perceived as stubborn and obsessive. Low conscientiousness are flexible and spontaneous, but can be perceived as sloppy and unreliable."><span class="horz-text" style="color:#1593be" id="conscientiousness">slightly organized</span><span class="out-of-text ptraits">Conscientiousness</span></div></div></div></div><p class="bottom-txt" style="color:#c1cfe4;float: none !important; font-size:16px" id="personality_description">Vignesh is a thoughtful individual who is collaborative, trusting and works well in a team.He has a very optimistic attitude and has the ability to see the glass half full rather than half empty. He expects the best to happen even when there are challenges all around.He has a sunny disposition and a friendly attitude towards other people. He is usually polite and helpful and inspires a sense of comfort and steadiness in his team.. He is an efficient and productive person who is motivated by opportunities to gain knowledge, showing expertise, and quality work. He is a person who can be a little anxious sometimes but can be determined when needed but has an empathetic approach in general. Vignesh is a person who can sometimes be friendly but is a good listener, likes to help others,has an amicable nature. He is a good team player who likes to work collaboratively. He has the ability to be helpful to others when needed, accept feedback positively and act on it without taking it personally. He is primarily motivated by achieving results and has a very strong focus on completing any task that he takes up.</p><div class="row row-centered"><div class="col-md-4"><h3 class="head-3"><span data-toggle="tooltip" title="" data-original-title="Overall sentiment exhibited by the given user over all the tweets">Sentiment</span></h3><div class="icons-div" id="sentiment_subsection"><div class="ind-icon first mr-30"><img src="dsense/positive_highlight.png" alt=""><span class="adj-text sentiment active" id="positive_sentiment">47%</span><span class="out-of-text">Positive</span></div><div class="ind-icon mr-30"><img src="dsense/neutral_highlight.png" alt=""><span class="adj-text sentiment active" id="neutral_sentiment">18%</span><span class="out-of-text">Neutral</span></div><div class="ind-icon mr-30"><img src="dsense/negative_highlight.png" alt=""><span class="adj-text sentiment active" id="negative_sentiment">34%</span><span class="out-of-text">Negative</span></div></div></div><div class="col-md-6"><h3 class="head-3" style="margin-top:20px"><span data-toggle="tooltip" title="Overall mood exhibited by the given user over all the tweets">Mood</span></h3><div class="icons-div" id="mood_subsection"><div class="ind-icon first mr-30"><img src="dsense/active_highlight.png" alt=""><span class="adj-text sentiment active" id="mood_active">51%</span><span class="out-of-text">Active</span></div><div class="ind-icon mr-30"><img src="dsense/anxious_highlight.png" alt=""><span class="adj-text sentiment active" id="mood_anxious">36%</span><span class="out-of-text">Anxious</span></div><div class="ind-icon mr-30"><img src="dsense/calm_highlight.png" alt=""><span class="adj-text sentiment active" id="mood_calm">12%</span><span class="out-of-text">Calm</span></div><div class="ind-icon mr-30"><img src="dsense/depressed_highlight.png" alt=""><span class="adj-text sentiment active" id="mood_depressed">1%</span><span class="out-of-text">Depressed</span></div></div></div><div class="col-md-6"><h3 class="head-3" style="margin-top:20px"><span data-toggle="tooltip" title="An individual's assessment on four different behavioral traits: Dominance, Influence, Steadiness, and Calculativeness.">DISC Assessment</span></h3><div class="icons-div" id="disc_subsection"><div class="disc_graph" id="disc_graph" style="display: block; height:300px;" data-highcharts-chart="0"><div id="highcharts-xw237je-0" class="highcharts-container " style="position: relative; overflow: hidden; width: 570px; height: 300px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="570" height="300" viewBox="0 0 570 300"><desc>Created with Highcharts 5.0.12</desc><defs><clipPath id="highcharts-xw237je-1"><rect x="0" y="0" width="550" height="275" fill="none"></rect></clipPath></defs><rect fill="rgba(255, 255, 255, 0.0)" class="highcharts-background" x="0" y="0" width="570" height="300" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="10" y="10" width="550" height="275"></rect><g class="highcharts-pane-group"></g><g class="highcharts-grid highcharts-xaxis-grid "><path fill="none" stroke="#e6e6e6" stroke-width="1" class="highcharts-grid-line" d="M 285 147.5 L 285 30.625" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" class="highcharts-grid-line" d="M 285 147.5 L 401.875 147.5" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" class="highcharts-grid-line" d="M 285 147.5 L 285 264.375" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" class="highcharts-grid-line" d="M 285 147.5 L 168.125 147.50000000000003" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" class="highcharts-grid-line" d="M 285 147.5 L 285 30.625" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "><path fill="none" stroke="#e6e6e6" stroke-width="0.2" class="highcharts-grid-line" d="M 285 147.5 L 285 147.5 L 285 147.5 L 285 147.5 L 285 147.5 L 285 147.5" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0.2" class="highcharts-grid-line" d="M 285 89.0625 L 285 89.0625 L 226.5625 147.5 L 285 205.9375 L 343.4375 147.5 L 285 89.0625" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0.2" class="highcharts-grid-line" d="M 285 30.625 L 285 30.625 L 168.125 147.50000000000003 L 285 264.375 L 401.875 147.5 L 285 30.625" opacity="1"></path></g><rect fill="none" class="highcharts-plot-border" x="10" y="10" width="550" height="275"></rect><g class="highcharts-axis highcharts-xaxis "><path fill="none" class="highcharts-axis-line" d="M 285 30.625 A 116.875 116.875 0 1 1 284.8831250194791 30.625058437495127 M 285 147.5 A 0 0 0 1 0 285 147.5 "></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 285 147.5 L 285 30.625"></path></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-line-series highcharts-color-undefined " transform="translate(10,10) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-1)"><path fill="none" d="M 275 67.375 L 340.45 137.50000000000023 L 274.99999999999955 205.2875 L 180.33125 137.499999999999 L 275 67.375" class="highcharts-graph" stroke="#f18d3c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 265 67.375 L 275 67.375 L 340.45 137.50000000000023 L 274.99999999999955 205.2875 L 180.33125 137.499999999999 L 275 67.375 L 285 67.375" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" class="highcharts-tracker"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-line-series highcharts-color-undefined highcharts-tracker" transform="translate(10,10) scale(1 1)" clip-path="none"><path fill="#f18d3c" d="M 279 67 A 4 4 0 1 1 278.9999980000002 66.99600000066667 Z" class="highcharts-point"></path><path fill="#f18d3c" d="M 344 138 A 4 4 0 1 1 343.9999980000002 137.99600000066667 Z" class="highcharts-point"></path><path fill="#f18d3c" d="M 278 205 A 4 4 0 1 1 277.9999980000002 204.99600000066667 Z" class="highcharts-point"></path><path fill="#f18d3c" d="M 184 137 A 4 4 0 1 1 183.99999800000018 136.99600000066667 Z" class="highcharts-point"></path></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels "><text x="285" style="color:white;cursor:default;font-size:11px;fill:white;" transform="translate(0,0)" text-anchor="middle" y="20.625" opacity="1"><tspan>D(6)</tspan></text><text x="416.875" style="color:white;cursor:default;font-size:11px;fill:white;" transform="translate(0,0)" text-anchor="start" y="152.5" opacity="1"><tspan>I(5.6)</tspan></text><text x="285" style="color:white;cursor:default;font-size:11px;fill:white;" transform="translate(0,0)" text-anchor="middle" y="284.375" opacity="1"><tspan>S(5.8)</tspan></text><text x="153.125" style="color:white;cursor:default;font-size:11px;fill:white;" transform="translate(0,0)" text-anchor="end" y="152.50000000000003" opacity="1"><tspan>C(8.1)</tspan></text><text x="0" style="color:white;cursor:default;font-size:11px;fill:white;" transform="translate(0,0)" text-anchor="middle" y="-9999"><tspan>4</tspan></text></g><g class="highcharts-axis-labels highcharts-yaxis-labels "><text x="282" style="color:white;cursor:default;font-size:11px;fill:white;" text-anchor="end" transform="translate(0,0)" y="145.5" opacity="1"><tspan>0</tspan></text><text x="282" style="color:white;cursor:default;font-size:11px;fill:white;" text-anchor="end" transform="translate(0,0)" y="87.0625" opacity="1"><tspan>5</tspan></text><text x="0" style="color:white;cursor:default;font-size:11px;fill:white;" text-anchor="end" transform="translate(0,0)" y="-9999"><tspan>10</tspan></text></g></svg></div></div><div class="row mt-20"><div class="col-lg-12 legend_flex"><span><span>D</span> Dominance</span><span><span>I</span> Influence</span></div></div><div class="row"><div class="col-lg-12 legend_flex"><span><span>S</span> Steadiness</span><span><span>C</span> Calculativeness</span></div></div></div></div></div></div>
+                </div>
+                <div class="text-rotate" style="text-shadow: black 0px 0px 18px; opacity: 0.082236;">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Interests
+                </div>
+            </section>
+
+            <section class="page-section" style="color: #000; background-color: rgb(243, 243, 243);" id="persona">
+                <div class="container relative">
+                    
+                    <div class="row cc-row">
+                    <h1 class="section-head">Persona</h1>
+                        <div class="align-center" id="persona-btn-div">
+                            <button class="btn-persona-emp active" data-hide="cc_persona_div" data-show="hiring_persona_div" id="btn-emp">Hiring</button> 
+                            <button class="btn-persona-cc" data-show="cc_persona_div" data-hide="hiring_persona_div" id="btn-cc">Customer Care</button>
+                        </div>
+                        <div class="tab-content clearfix">
+                            <div id="cc_persona_div" style="display: none;">
+                                <div id="customer_care_persona_section">
+                                    <div class="close_section_popup" id="customer_care_close">X</div>
+                                    <div class="download_section" id="customer_care_persona_section_download"><i class="fa fa-download" aria-hidden="true"></i></div>
+                                    <!-- <div class="share_section" id="customer_care_persona_section_share"><i class="fa fa-share" aria-hidden="true"></i></div> -->
+                                    <div class="share_section btn-group ">
+                                        <!-- <a class="dropdown-toggle" data-toggle="dropdown" style="color: #9E9E9E" id="customer_care_section_share"><i class="fa fa-share" aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu">
+                                            <li><a class="share_it_button" onclick="share(event,'Customer Care Persona','facebook','customer_care_persona_section')"  id="personality_facebook" tabindex="-1" href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+
+                                            <li><a id="personality_twitter" onclick="share(event,'Customer Care Persona','twitter','customer_care_persona_section')" class="share_it_button"><i class="fa fa-twitter"></i> Twitter</a></li>
+                                            
+                                            <li><a class="share_it_button" onclick="share(event,'Customer Care Persona','linkedin','customer_care_persona_section')" tabindex="-1" href=""><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                                        </ul> -->
+                                    </div>
+                                    <div class="row" id="hide_on_error_cc">
+                                            <div class="col-md-6 resp-center mobile-side-padding">
+                                                <!-- <div class="row">
+                                                    <div class="col-md-2 cc-dp-img">
+                                                        <div class="mobile-no-padding" style="margin-left:20px;">
+                                                            <img  class="dp-img" src="" id="cc-img" alt="" onerror="imgError(this);">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 mobile-no-padding" style="padding-left:13px">
+                                                        <div class="cc-bio-item">
+                                                            <i class="fa fa-twitter"></i><span id="cc-username"></span>
+                                                        </div>
+                                                        <div class="cc-bio-item">
+                                                            <i class="fa fa-map-marker"></i><span class="capitalize-txt" id="cc-location">NA</span>
+                                                        </div>
+                                                        <div class="cc-bio-item">
+                                                            <i class="fa fa-star"></i><span class="capitalize-txt"  id="cc-social-influence">NA</span>
+                                                        </div>
+                                                        <div class="cc-bio-item">
+                                                            <span class="capitalize-txt" id="cc-bio"></span>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="social-buttons-slider"></div> -->
+                                                <div>
+                                                    <span class="persona-icons"><i class="fa fa-users"></i></span>
+                                                    <h3 class="head-3-cc" style="color:black">Social Influence:  <span style="color:#8c8c8c" id="cc-social-influence">Low</span></h3>
+                                                </div>
+                                                <div>
+                                                    <span class="persona-icons"><i class="fa fa-language"></i></span>
+                                                    <h3 class="head-3-cc" style="color:black">Primary Language:  <span style="color:#8c8c8c" id="cc-lang">English</span></h3>
+                                                </div>
+                                                <span class="persona-icons"><i class="fa fa-commenting-o"></i></span>
+                                                <h3 class="head-3-cc" style="color:black">Communication Advice</h3>
+                                                <div id="comm-advice resp-center">
+                                                    <span id="cc-comm-approach" class="resp-center">Try to be respectful, logical</span>
+                                                    <p class="cc-suggestion mb-10 resp-center"><i id="cc-example" class="resp-center" style="width:80%">For Example, Sir/Madam, I am sorry about your trouble. This would be fixed asap. Please let us know if it's not fixed in the next X hours.</i></p><p class="error-msg-p"><i id="cc-example" class="resp-center" style="width:80%">No data available</i></p><p></p><p class="error-msg-p"><i id="cc-example" class="resp-center" style="width:80%">No data available</i></p><p></p>
+                                                    <!-- <p><strong>Primary Language :</strong> <span id="cc-lang">NA</span></p>  -->
+                                                </div>
+                                                <span><img style="margin-right: 2px; width: auto;height: 18px !important;margin-top: -7px;display: inline-block;" class="persona-lang" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/tag.svg"></span>
+                                                <h3 class="head-3-cc" style="color:black">Brand Usage</h3>
+                                                <div id="comp-usage"><div class="bu-slider owl-carousel owl-theme align-center" style="display: block;"><p style="margin-top:15px !important" class="error-msg-p p-left">No data available</p></div></div>
+                                            </div>
+                                            <div class="col-md-6 resp-center mobile-side-padding">   
+                                                <div id="cc_behaviour"><div class="row"><div class="col-lg-6 col-md-12 bar-item even-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">Attitude and Outlook</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">positive</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 79%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">8/10</span></div></div></div></div><div class="row"><div class="col-lg-6 col-md-12 bar-item even-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">General Behavior</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">usually friendly</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 68%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">7/10</span></div></div></div></div><div></div></div>                                
+                                                <!-- <div id="cc-ints-holder" style="display:none">
+                                                    <div>
+                                                        <span class="persona-icons"><i class="fa fa-heart-o"></i></span>
+                                                        <h3 class="head-3-cc mt-10 resp-center resp-mt-30" style="color:black;margin-top:0">Interests</h3>
+                                                    </div>
+                                                    
+                                                    <div id="cc-ints-data" class="resp-center"></div>
+                                                </div> -->
+                                                <!-- <span class="persona-icons"><i class="fa fa-user-o"></i></span>
+                                                <h3 class="head-3-cc resp-center" style="color:black">Personality</h3>
+                                                <div id="cc-personality" class="resp-center mobile-side-padding">
+                                                    <p class="error-msg-p">Data not available</p></span>
+                                                </div> -->
+                                                <!-- ////////////////////Education////////////// -->
+                                                <span>
+                                                    <img style="margin-left: -15px;margin-right: 2px; width: auto;height: 18px !important;margin-top: -7px;display: inline-block;" class="persona-lang" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/edu.svg">
+                                                </span>
+                                                <h3 class="head-3-cc" style="color:black;">Education</h3>
+                                                
+                                                <div class="fullwidth-slider-edu-cc owl-carousel owl-theme mobile-side-padding" style="width: 85%; margin-left: -15px; display: none;">
+                                                    
+                                                </div>
+                                                <p id="error_msg_education_cc" style="margin-top:15px !important;margin-bottom: 45px !important;" class="error-msg-p p-left">No data available</p>
+
+                                                <!-- ////////////////////Education Ends////////////// -->
+
+
+                                                <span><img style="margin-left: -15px;margin-right: 2px; width: auto;height: 18px !important;margin-top: -7px;display: inline-block;" class="persona-lang" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/professions.svg"></span>
+                                                <h3 class="head-3-cc" style="color:black;">Work History</h3>
+                                                
+                                                <div class="fullwidth-slider-work-cc owl-carousel owl-theme mobile-side-padding" style="width: 85%; margin-left: -15px; display: none;">
+                                                    <!-- <p class="error-msg-p">Data not available</p>                               -->
+                                                </div>
+                                                <p id="error_msg_workhistory_cc" style="margin-top:15px !important;margin-bottom: 45px !important;" class="error-msg-p p-left">No data available</p>
+                                            
+                                                <!-- <h3 class="head-3-cc resp-center" id="cc-usr-b" style="color:black">Bio</h3>
+                                                <div id="cc-user-bio" class="resp-center">
+                                                    <p class="error-msg-p"></p></span>
+                                                </div> -->
+                                            </div>                                    
+                                        </div>
+                                        <div class="col-md-12" id="cc-error-msg" style="height:30px;display:none">
+                                                <p class="error-msg-p align-center">Data not available</p>
+                                        </div>
+                                    </div>                                
+                            </div>
+                            <div id="hiring_persona_div" style="">
+                                <div id="hiring_persona_section">
+                                    <div class="close_section_popup" id="customer_care_close">X</div>
+                                    <div class="download_section" id="hiring_persona_section_download"><i class="fa fa-download" aria-hidden="true"></i></div>
+                                    <!-- <div class="share_section" id="hiring_persona_section_share"><i class="fa fa-share" aria-hidden="true"></i></div> -->
+                                    <div class="share_section btn-group ">
+                                        <!-- <a class="dropdown-toggle" data-toggle="dropdown" style="color: #9E9E9E" id="hiring_persona_section_share"><i class="fa fa-share" aria-hidden="true"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu">
+                                            <li><a class="share_it_button" onclick="share(event,'facebook','hiring_persona_section')"  id="personality_facebook" tabindex="-1" href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+
+                                            <li><a id="personality_twitter" onclick="share(event,'Hiring Persona','twitter','hiring_persona_section')" class="share_it_button"><i class="fa fa-twitter"></i> Twitter</a></li>
+                                            
+                                            <li><a class="share_it_button" onclick="share(event,'Hiring Persona','linkedin','hiring_persona_section')" tabindex="-1" href=""><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                                        </ul> -->
+                                    </div>
+                                    <div class="row" id="hide_on_error_emp">
+                                    <!-- <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                                        <div class="emp-note-div align-center">
+                                            <strong>Note: </strong>Data below is for representation purpose only. Individual/user level data will be available shortly.
+                                        </div>
+                                    </div> -->
+                                        <div class="col-md-6 resp-center ipad-side-padding">
+                                        <span style="margin-left: -15px" class="persona-icons"><i style="font-size:20px" class="fa fa-user-circle"></i></span>
+                                    
+                                        <h3 class="head-3-cc" style="color:black;">Behavioral Attributes</h3>
+                                        <div id="hiring_behaviour"><div class="row"><div class="col-lg-6 col-md-12 bar-item even-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">Attitude and Outlook</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">positive</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 79%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">8/10</span></div></div></div><div class="col-lg-6 col-md-12 bar-item odd-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">Need for Autonomy</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">high</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 61%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">6/10</span></div></div></div></div><div class="row"><div class="col-lg-6 col-md-12 bar-item even-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">Teamwork Skills</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">very good</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 67%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">7/10</span></div></div></div><div class="col-lg-6 col-md-12 bar-item odd-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">General Behavior</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">usually friendly</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 68%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">7/10</span></div></div></div></div><div class="row"><div class="col-lg-6 col-md-12 bar-item even-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">Action Orientedness</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">very high</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 82%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">8/10</span></div></div></div><div class="col-lg-6 col-md-12 bar-item odd-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">Stability Potential</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">medium</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 59%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">6/10</span></div></div></div></div><div class="row"><div class="col-lg-6 col-md-12 bar-item even-bar-item"><div class="mt-10"><span class="dswa-hiringperson_name">Learning Ability</span><span class="pull-right dswa-hiringpersona_value_container"><span class="dswa-hiringperson_level titlecase">medium</span></span></div><div class=""><div class="dswa-demogrpahics_icon_progress"><div class="progress-group bars-holder"><div class="progress dswa-progress-custom dswa-vsm" style="background-color:#ffffff;"><div class="progress-bar dswa-bgblack" style="width: 42%; background-color: rgb(255, 0, 0);"></div></div></div><span class="dswa-demogrpahics_icon_progress_value_label">4/10</span></div></div></div><div></div></div></div>
+                                        <!-- <div class="row">
+                                            <div class="col-md-2 cc-dp-img">
+                                                <div class="mobile-no-padding" style="margin-left:20px;">
+                                                    <img  class="dp-img" src="" id="emp-img" alt="" onerror="imgError(this);">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 mobile-no-padding" style="padding-left:13px">
+                                                <div class="cc-bio-item">
+                                                    <i class="fa fa-twitter"></i><span id="emp-username"></span>
+                                                </div>
+                                                <div class="cc-bio-item">
+                                                    <i class="fa fa-map-marker"></i><span class="capitalize-txt" id="emp-location">NA</span>
+                                                </div>
+                                                <div class="cc-bio-item">
+                                                    <i class="fa fa-star"></i><span class="capitalize-txt"  id="emp-social-influence">NA</span>
+                                                </div>
+                                                <div class="cc-bio-item">
+                                                    <span class="capitalize-txt" id="emp-bio"></span>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="social-buttons-slider"></div> -->
+                                        
+                                        <!-- <span class="persona-icons" style="padding-right: 2px;"><i class="fa fa-id-badge"></i></span>
+                                        <h3 class="head-3-cc resp-center" id="cc-usr-b" style="color:black;margin-top:0">Behaviour-Role Fit</h3>
+                                        <div id="emp-role">
+                                            <div class="emp-role-child">
+                                                Technical : <span id="emp-tech">NA</span>
+                                            </div>
+                                            
+                                            <div class="emp-role-child">
+                                                Managerial : <span id="emp-manag">NA</span>
+                                            </div>
+                                            
+                                        </div> -->
+
+                                       
+                                        <!-- <div style="margin-left:-15px">
+                                            <span class="persona-icons"><i class="fa fa-language"></i></span>
+                                            <h3 class="head-3-cc" style="color:black">Primary Language:  <span style="color:#8c8c8c" id="emp-lang">NA</span></h3>
+                                        </div> -->
+
+                                        <!-- ////////////////////Education////////////// -->
+                                        
+                                    </div>
+                                    <div class="col-md-6 resp-center">
+                                        
+                                        <span>
+                                            <img style="margin-left: -15px;margin-right: 2px; width: auto;height: 18px !important;margin-top: -7px;display: inline-block;" class="persona-lang" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/edu.svg">
+                                        </span>
+                                        <h3 class="head-3-cc" style="color:black;">Education</h3>
+                                        
+                                        <div class="fullwidth-slider-edu owl-carousel owl-theme mobile-side-padding" style="width: 85%; margin-left: -15px; display: none;">
+                                            
+                                        </div>
+                                        <p id="error_msg_education" style="margin-top:15px !important;margin-bottom: 45px !important;" class="error-msg-p p-left">No data available</p>
+
+                                        <!-- ////////////////////Education Ends////////////// -->
+
+
+                                        <span><img style="margin-left: -15px;margin-right: 2px; width: auto;height: 18px !important;margin-top: -7px;display: inline-block;" class="persona-lang" src="http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak//thebactrak App_files/professions.svg"></span>
+                                        <h3 class="head-3-cc" style="color:black;">Work History</h3>
+                                        <!-- <div class="mt-0 white-shadow">
+                                            <div id="workhistory-slider" class="owl-carousel owl-theme">
+                                                <p class="error-msg-p">Data not available</p> 
+
+                                            </div>
+                                        </div> -->
+                                        <div class="fullwidth-slider-work owl-carousel owl-theme mobile-side-padding" style="width: 85%; margin-left: -15px; display: none;">
+                                            <!-- <p class="error-msg-p">Data not available</p>                               -->
+                                        </div>
+                                        <p id="error_msg_workhistory" style="margin-top:15px !important;margin-bottom: 45px !important;" class="error-msg-p p-left">No data available</p>
+                                        <!-- <div id="hiring_rolefit" class="mb-30 row"></div> -->
+
+                                        <!-- <span class="persona-icons"><i class="fa fa-user-o"></i></span>
+                                        <h3 class="head-3-cc resp-center" style="color:black">Personality</h3>
+                                        <div id="emp-personality" class="resp-center mobile-side-padding">
+                                            <p class="error-msg-p">Data not available</p></span>
+                                        </div> -->
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-12" id="emp-error-msg" style="height:30px;;display:none">
+                                        <p class="error-msg-p align-center">Data not available</p>
+                                </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </section>
+            
+            <section class="page-section" id="social_activity_section">
+                 <div class="container relative">
+                    <div class="row">
+                        <div class="close_section_popup" id="social_activity_section_close">X</div>
+                        <div class="download_section" id="social_activity_section_download"><i class="fa fa-download" aria-hidden="true"></i></div>
+                        <div class="share_section btn-group ">
+                        </div>
+                        <h1 class="section-head">Social activity</h1>
+                        <div id="socialActivityContainer"><div class="container relative"><div class="col-md-6"><div style="display:flex" class="klout-mobile"><div id="influence-holder"><div data-toggle="tooltip" title="A Klout-like measure of influence the given user has on social media" class="adjoining-text"><span id="auth-measure" class="adj-text activity-text">Low</span><span class="out-of-text" style="color:#44484e; font-weight:bold">Social Influence</span></div><div class="auth-score-block"><div class="round-text" style="display:flex; flex-direction:column"><span id="authority" class="score-text">2.2</span><span class="out-of-text" style="color:white; font-size:10px;">out of 10</span></div></div></div></div><hr class="mt-0 mb-0 "><h3 class="head-3" style="color:black; margin-top:25px"><span id="activity-heading" data-toggle="tooltip" title="Part of the day when the given user is most active on social media">Mostly Active : <span style="color:#3e4fc5">Early Morning</span><span></span></span></h3><div class="icons-div" id="activity-icons"><div class="ind-icon" style="width:15%"><img class="act-image" src="dsense/early_morning.png" alt=""><span class="adj-text act-text activity-text" id="Early-Morning">22%</span><span class="out-of-text">Early Morning</span></div><div class="ind-icon first" style="width:15%"><img class="act-image" src="dsense/morning.png" alt=""><span class="adj-text act-text activity-text" id="Morning">6%</span><span class="out-of-text">Morning</span></div><div class="ind-icon" style="width:15%"><img class="act-image" src="dsense/afternoon.png" alt=""><span class="adj-text act-text activity-text" id="Afternoon">17%</span><span class="out-of-text">Afternoon</span></div><div class="ind-icon" style="width:15%"><img class="act-image" src="dsense/evening.png" alt=""><span class="adj-text act-text activity-text" id="Evening">21%</span><span class="out-of-text">Evening</span></div><div class="ind-icon" style="width:15%"><img class="act-image" src="dsense/night.png" alt=""><span class="adj-text act-text activity-text" id="Night">22%</span><span class="out-of-text">Night</span></div><div class="ind-icon last" style="width:15%"><img class="act-image" src="dsense/late_night.png" alt=""><span class="adj-text act-text activity-text" id="Late-Night">12%</span><span class="out-of-text">Late-Night</span></div><span style="color:#A7AAB3; margin-top:25px; display:block" id="activity_summary"></span></div><hr class="mt-0 mb-30 "><div id="user-activity-holder"><h3 class="head-3 head-3-ua" data-toggle="tooltip" title="Social Activity in terms of tweets posted by a given user over a given time period" style="color:#11131e;margin-bottom: 0;">User Activity Trend</h3></div><div class="tab-content"><div class="tab-pane active" id="monthly" role="tabpanel"><div id="guage" style="width: 100%; height: 250px;" data-highcharts-chart="1"><div id="highcharts-xw237je-3" class="highcharts-container " style="position: relative; overflow: hidden; width: 570px; height: 250px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="570" height="250" viewBox="0 0 570 250"><desc>Created with Highcharts 5.0.12</desc><defs><clipPath id="highcharts-xw237je-4"><rect x="0" y="0" width="630" height="235" fill="none"></rect></clipPath></defs><rect fill="transparent" class="highcharts-background" x="0" y="0" width="570" height="250" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="-70" y="0" width="630" height="235"></rect><g class="highcharts-pane-group"><path fill="transparent" d="M 77.13125 152.75 A 104.86875 104.86875 0 1 1 286.86869756562936 152.64513126747812 L 182 152.75 A 0 0 0 1 0 182 152.75 Z" stroke="transparent" stroke-width="1" class="highcharts-pane "></path></g><g class="highcharts-grid highcharts-yaxis-grid "></g><rect fill="none" class="highcharts-plot-border" x="-70" y="0" width="630" height="235"></rect><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 82.125 152.75 A 99.875 99.875 0 1 1 281.8749500625042 152.65012501664583 M 182 152.75 A 0 0 0 1 0 182 152.75 "></path></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-solidgauge-series highcharts-color-0 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#7cb5ec" d="M 122.1625 152.74999999999997 A 129.8375 129.8375 0 0 1 122.16256491874458 152.8798374783604 L 122.16256491874458 152.8798374783604 A 129.8375 129.8375 0 0 0 122.1625 152.74999999999997 Z" class="highcharts-point highcharts-color-0" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#7cb5ec" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-solidgauge-series highcharts-color-0 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-1 highcharts-solidgauge-series highcharts-color-1 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#434348" d="M 132.15 152.74999999999997 A 119.85 119.85 0 0 1 371.78823921881474 148.90289136415183 L 371.78823921881474 148.90289136415183 A 119.85 119.85 0 0 0 132.15 152.74999999999997 Z" class="highcharts-point highcharts-color-1" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#434348" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-1 highcharts-solidgauge-series highcharts-color-1 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-2 highcharts-solidgauge-series highcharts-color-2 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#90ed7d" d="M 142.1375 152.75 A 109.8625 109.8625 0 0 1 143.44652883374306 135.84104367482666 L 143.44652883374306 135.84104367482666 A 109.8625 109.8625 0 0 0 142.1375 152.75 Z" class="highcharts-point highcharts-color-2" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#90ed7d" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-2 highcharts-solidgauge-series highcharts-color-2 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-3 highcharts-solidgauge-series highcharts-color-3 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#f7a35c" d="M 152.125 152.75 A 99.875 99.875 0 0 1 152.12504993749582 152.84987498335414 L 152.12504993749582 152.84987498335414 A 99.875 99.875 0 0 0 152.125 152.75 Z" class="highcharts-point highcharts-color-3" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#f7a35c" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-3 highcharts-solidgauge-series highcharts-color-3 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-4 highcharts-solidgauge-series highcharts-color-4 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#8085e9" d="M 162.1125 152.75 A 89.8875 89.8875 0 0 1 162.11254494374626 152.83988748501872 L 162.11254494374626 152.83988748501872 A 89.8875 89.8875 0 0 0 162.1125 152.75 Z" class="highcharts-point highcharts-color-4" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#8085e9" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-4 highcharts-solidgauge-series highcharts-color-4 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-5 highcharts-solidgauge-series highcharts-color-5 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#f15c80" d="M 172.1 152.75 A 79.9 79.9 0 0 1 172.10003994999667 152.8298999866833 L 172.10003994999667 152.8298999866833 A 79.9 79.9 0 0 0 172.1 152.75 Z" class="highcharts-point highcharts-color-5" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#f15c80" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-5 highcharts-solidgauge-series highcharts-color-5 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-6 highcharts-solidgauge-series highcharts-color-6 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#e4d354" d="M 182.0875 152.75 A 69.9125 69.9125 0 0 1 291.7949186658252 95.26850641614853 L 291.7949186658252 95.26850641614853 A 69.9125 69.9125 0 0 0 182.0875 152.75 Z" class="highcharts-point highcharts-color-6" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#e4d354" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-6 highcharts-solidgauge-series highcharts-color-6 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-7 highcharts-solidgauge-series highcharts-color-7 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#2b908f" d="M 192.075 152.75 A 59.925 59.925 0 0 1 251.00814039376453 92.83320903518347 L 251.00814039376453 92.83320903518347 A 59.925 59.925 0 0 0 192.075 152.75 Z" class="highcharts-point highcharts-color-7" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#2b908f" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-7 highcharts-solidgauge-series highcharts-color-7 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-8 highcharts-solidgauge-series highcharts-color-8 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#f45b5b" d="M 202.0625 152.75 A 49.9375 49.9375 0 0 1 251.1734503281371 102.8193408626529 L 251.1734503281371 102.8193408626529 A 49.9375 49.9375 0 0 0 202.0625 152.75 Z" class="highcharts-point highcharts-color-8" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#f45b5b" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-8 highcharts-solidgauge-series highcharts-color-8 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-9 highcharts-solidgauge-series highcharts-color-9 highcharts-tracker" transform="translate(-70,0) scale(1 1)" clip-path="url(http://ec2-13-229-104-76.ap-southeast-1.compute.amazonaws.com/thebactrak/thebactrak-app/vignesh#highcharts-xw237je-4)"><path fill="#91e8e1" d="M 212.05 152.75 A 39.95 39.95 0 0 1 239.14517873841567 114.92466364547805 L 239.14517873841567 114.92466364547805 A 39.95 39.95 0 0 0 212.05 152.75 Z" class="highcharts-point highcharts-color-9" sweep-flag="0" stroke-linecap="round" stroke-linejoin="round" stroke="#91e8e1" stroke-width="5px"></path></g><g class="highcharts-markers highcharts-series-9 highcharts-solidgauge-series highcharts-color-9 " transform="translate(-70,0) scale(1 1)" clip-path="none"></g></g><g class="highcharts-legend" transform="translate(428,10)"><rect fill="none" class="highcharts-legend-box" rx="0" ry="0" x="0" y="0" width="132" height="151" visibility="visible"></rect><g><g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-0 highcharts-series-0" transform="translate(8,3)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#7cb5ec" stroke-width="2"></path><path fill="#7cb5ec" d="M 12 11 A 4 4 0 1 1 11.999998000000167 10.996000000666664 Z" class="highcharts-point"></path><text x="21" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" y="15"><tspan>June, 2018</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-1 highcharts-series-1" transform="translate(8,17)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#434348" stroke-width="2"></path><path fill="#434348" d="M 8 7 L 12 11 8 15 4 11 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>May, 2018</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-2 highcharts-series-2" transform="translate(8,31)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#90ed7d" stroke-width="2"></path><path fill="#90ed7d" d="M 4 7 L 12 7 12 15 4 15 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>April, 2018</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-3 highcharts-series-3" transform="translate(8,45)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#f7a35c" stroke-width="2"></path><path fill="#f7a35c" d="M 8 7 L 12 15 4 15 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>March, 2018</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-4 highcharts-series-4" transform="translate(8,59)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#8085e9" stroke-width="2"></path><path fill="#8085e9" d="M 4 7 L 12 7 8 15 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>February, 2018</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-5 highcharts-series-5" transform="translate(8,73)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#f15c80" stroke-width="2"></path><path fill="#f15c80" d="M 12 11 A 4 4 0 1 1 11.999998000000167 10.996000000666664 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>January, 2018</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-6 highcharts-series-6" transform="translate(8,87)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#e4d354" stroke-width="2"></path><path fill="#e4d354" d="M 8 7 L 12 11 8 15 4 11 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>December, 2017</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-7 highcharts-series-7" transform="translate(8,101)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#2b908f" stroke-width="2"></path><path fill="#2b908f" d="M 4 7 L 12 7 12 15 4 15 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>November, 2017</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-8 highcharts-series-8" transform="translate(8,115)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#f45b5b" stroke-width="2"></path><path fill="#f45b5b" d="M 8 7 L 12 15 4 15 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>October, 2017</tspan></text></g><g class="highcharts-legend-item highcharts-solidgauge-series highcharts-color-9 highcharts-series-9" transform="translate(8,129)"><path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#91e8e1" stroke-width="2"></path><path fill="#91e8e1" d="M 4 7 L 12 7 8 15 Z" class="highcharts-point"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>September, 2017</tspan></text></g></g></g></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g></svg></div></div></div><div class="tab-pane" id="daily" role="tabpanel"><div id="guage1" style="height:200px; width: 400px;"></div></div></div></div><hr class="hidden-xl hidden-lg hidden-md"><div class="col-md-5 interactions-div" style="margin-left:60px;"><div class="row"><h3 class="head-3 interactions-heading" style="color:#11131e;margin-bottom: 0;"><span data-toggle="tooltip" title="The other users that the given user mentions, responds to or interacts with, along with 'affinity' of their interaction">Mostly Interacts With</span></h3><div class="affinity-table" style="margin-bottom:0" id="interactions-table"><table id="social-activity-table" style="width:100%" class="col-md-12"><tbody><tr><th style="color: #9599ac;font-size: 15px;margin-bottom: 20px;">Users</th><th style="color: #9599ac;font-size: 15px;margin-bottom: 20px;padding-right:5px !important">Interaction Affinity</th><th style="color: #9599ac;font-size: 15px;margin-bottom: 20px;">Interaction Level</th></tr><tr class="affinity-tr"><td class="affinity-cell">@manishsshrma</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">0%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@tkmackey</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">63%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@jaanukal</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">17%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@karpathy</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">80%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@narendramodi</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">100%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@realdonaldtrump</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">20%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@adgpi</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">33%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@donaldtendulkar</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">50%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@toddler_diaries</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">100%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr><tr class="affinity-tr"><td class="affinity-cell">@bshum79</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">67%</td><td class="affinity-cell"><ul class="dots" data-percent="4"><li class="active"></li><li class="active"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></td></tr></tbody></table></div></div></div></div></div>
+                    </div>
+                </div>
+                <div class="text-rotate" style="text-shadow: black 0px 0px 18px; opacity: 0.082236;">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Personality
+                </div> 
+            </section>
+            <!-- End About Section -->
+
+            <!-- Process Section -->
+            <section class="page-section" id="interests_section">
+                <div class="container relative">
+                    <div class="close_section_popup" id="interests_section_close">X</div>
+                    <div class="download_section" id="interests_section_download">
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                    </div>
+                    <div class="share_section btn-group ">
+                    </div>
+                    <div class="row row-centered mobile-side-padding">
+                        <h1 class="section-head">Interests</h1>
+                        <div class="col-md-12" id="int-holder-div">
+                            <div id="interest-graph" class="hidden-sm hidden-xs" style="height: 300px;"><div style="cursor:pointer; height:196px; width:196px; line-height:196px; margin-left:-42px;" class="int-circle0 active-circle" onclick="clickInterestCircle(0)"><span>politics</span><span>37%</span></div><div style="cursor:pointer; height:182.5px; width:182.5px; line-height:182.5px; margin-left:-38.5px;" class="int-circle1 opaque" onclick="clickInterestCircle(1)"><span>consumer durables</span><span>12%</span></div><div style="cursor:pointer; height:169px; width:169px; line-height:169px; margin-left:-35px;" class="int-circle2 opaque" onclick="clickInterestCircle(2)"><span>lifestyle</span><span>12%</span></div><div style="cursor:pointer; height:155.5px; width:155.5px; line-height:155.5px; margin-left:-31.5px;" class="int-circle3 opaque" onclick="clickInterestCircle(3)"><span>government</span><span>12%</span></div><div style="cursor:pointer; height:142px; width:142px; line-height:142px; margin-left:-28px;" class="int-circle4 opaque" onclick="clickInterestCircle(4)"><span>science</span><span>12%</span></div><div style="cursor:pointer; height:128.5px; width:128.5px; line-height:128.5px; margin-left:-24.5px;" class="int-circle5 opaque" onclick="clickInterestCircle(5)"><span>media</span><span>12%</span></div></div>
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                     <ul class="nav nav-tabs" id="interest-tabs" role="tablist"><li class="nav-item active"><a class="nav-link active tb0" data-toggle="tab" href="#tab-0" role="tab" onclick="changeCircleColor(0)">politics</a></li><li class="nav-item"><a class="nav-link active tb1" data-toggle="tab" href="#tab-1" role="tab" onclick="changeCircleColor(1)">consumer durables</a></li><li class="nav-item"><a class="nav-link active tb2" data-toggle="tab" href="#tab-2" role="tab" onclick="changeCircleColor(2)">lifestyle</a></li><li class="nav-item"><a class="nav-link active tb3" data-toggle="tab" href="#tab-3" role="tab" onclick="changeCircleColor(3)">government</a></li><li class="nav-item"><a class="nav-link active tb4" data-toggle="tab" href="#tab-4" role="tab" onclick="changeCircleColor(4)">science</a></li><li class="nav-item"><a class="nav-link active tb5" data-toggle="tab" href="#tab-5" role="tab" onclick="changeCircleColor(5)">media</a></li></ul>
+                                </div>
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="tab-content" id="interest-tab-content"><div class="tab-pane active" id="tab-0" role="tabpanel"><div class="panel panel-default"><div class="panel-heading">politics (100% Share)</div><div class="panel-body"><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">narendra modi</p><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">bhagat singh</p><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">subramanian swamy</p></div></div></div><div class="tab-pane" id="tab-1" role="tabpanel"><div class="panel panel-default"><div class="panel-heading">electronics (100% Share)</div><div class="panel-body"><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">Oculus</p></div></div></div><div class="tab-pane" id="tab-2" role="tabpanel"><div class="panel panel-default"><div class="panel-heading">fun (100% Share)</div><div class="panel-body"><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">Imgur</p></div></div></div><div class="tab-pane" id="tab-3" role="tabpanel"><div class="panel panel-default"><div class="panel-heading">government agency (100% Share)</div><div class="panel-body"><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">Travel - State Dept</p></div></div></div><div class="tab-pane" id="tab-4" role="tabpanel"><div class="panel panel-default"><div class="panel-heading">science (100% Share)</div><div class="panel-body"><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">Microsoft Research</p></div></div></div><div class="tab-pane" id="tab-5" role="tabpanel"><div class="panel panel-default"><div class="panel-heading">news media (100% Share)</div><div class="panel-body"><p class="black-border" style="display:inline-block;padding:5px; margin:5px 5px 5px 0; border-radius: 4px;text-transform:capitalize; font-size:12px;">Google Research</p></div></div></div></div>
+                                </div>
+                            </div>
+                            <!-- Tab panes -->
+                        </div>
+                    </div>
+                </div>
+                <div class="text-rotate" style="text-shadow: black 0px 0px 18px; opacity: 0.082236;">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Affinities
+                </div>
+            </section>
+            
+            <section class="page-section" style="background-color:#f2f6fc" id="affinity_section">
+                <div class="container relative">
+                    <div class="close_section_popup" id="affinity_section_close">X</div>
+                    <div class="download_section" id="affinity_section_download"><i class="fa fa-download" aria-hidden="true"></i></div>
+                    <div class="share_section btn-group ">
+                    </div>
+                    <div class="row row-centered mobile-side-padding">
+                        <h1 class="section-head"><span data-toggle="tooltip" title="" data-original-title="What content and topics this user talks about">Likes To Talk About</span></h1>
+                        <div id="chart" class="chart" style="width: 500px; height: 400px; max-height: 600px;"><div class="circle0 active-circle" onclick="affinityClick(&quot;business&quot;,this)">business</div><div class="circle1 opaque" onclick="affinityClick(&quot;product&quot;,this)">product</div><div class="circle2 opaque" onclick="affinityClick(&quot;company&quot;,this)">company</div><div class="circle3 opaque" onclick="affinityClick(&quot;entertainment&quot;,this)">entertainment</div><div class="circle4 opaque" onclick="affinityClick(&quot;healthcare&quot;,this)">healthcare</div><div class="circleother opaque" onclick="affinityClick(&quot;others&quot;,this)">Others</div></div>
+                        <div class="horizontal-icons-div sports-icons mt-50">
+                            <div class="horizontal-block block-inline">
+                                <div class="in-bl txt-l">
+                                    <span class="horz-text aff-num" id="affinity-soc">41%</span>
+                                    <span style="color:#828590" class="out-of-text">Share of Conversation</span>
+                                </div>
+                            </div>
+                            <div class="horizontal-block block-inline">
+
+                                <div class="in-bl txt-l">
+                                    <span class="horz-text aff-num" id="affinity-neutral">15%</span>
+                                    <span style="color:#828590" class="out-of-text">Neutral Sentiment</span>
+                                </div>
+                            </div>
+                            <div class="horizontal-block block-inline">
+
+                                <div class="in-bl txt-l">
+                                    <span class="horz-text aff-num" id="affinity-positive">35%</span>
+                                    <span style="color:#828590" class="out-of-text">Positive Sentiment</span>
+                                </div>
+                            </div>
+                            <div class="horizontal-block block-inline">
+
+                                <div class="in-bl txt-l">
+                                    <span class="horz-text aff-num" id="affinity-negative">50%</span>
+                                    <span style="color:#828590" class="out-of-text">Negative Sentiment</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="chart-tbl">
+                            <div class="col-md-7 col-md-offset-3" id="affinity-table"><table style="width:100%"><tbody><tr><th></th><th class="affinity-th">Count</th><th class="affinity-th">Sentiment</th></tr><tr class="affinity-tr"><td class="affinity-cell">cars</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">4</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-25%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">@jaanukal</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">3</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-medium" style="color: rgb(241, 196, 15);">0%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">@uber</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">3</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-high" style="color: rgb(46, 204, 113);">33%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">@arjunkharpal</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">@electrekco</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-medium" style="color: rgb(241, 196, 15);">0%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">@tkmackey</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-high" style="color: rgb(46, 204, 113);">50%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">apple</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">facebook</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-high" style="color: rgb(46, 204, 113);">50%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">google</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">honor</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-high" style="color: rgb(46, 204, 113);">50%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">uber</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">uber_’s</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">2</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-medium" style="color: rgb(241, 196, 15);">0%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#asu</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-high" style="color: rgb(46, 204, 113);">100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#automateddriving</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-medium" style="color: rgb(241, 196, 15);">0%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#autonomousvehicles</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#brussels</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#cars</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#deleteuber</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#emtechdigital</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-high" style="color: rgb(46, 204, 113);">100%</span></td></tr><tr class="affinity-tr"><td class="affinity-cell">#ind</td><td class="affinity-cell"><img class="table-icon" src="dsense/comment.svg" alt=""><span class="table-sp">1</span></td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt=""><span class="table-sp table-sp-sent item-low" style="color: rgb(231, 76, 60);">-100%</span></td></tr></tbody></table></div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </section>
+           
+            <section class="page-section" style="background-color:#f2f5fe;padding:10px !important;text-align:right">
+              <div class="container relative">
+                <div class="">
+                    <a id="show-all-sections" type="button">Show All Sections</a>
+                </div>
+              </div>
+            </section>
+        </body></html>

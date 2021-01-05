@@ -1,0 +1,1631 @@
+.ds-h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.ds-h3 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 55px;
+}
+
+.ds-h4 {
+    font-size: 28px;
+    color: #c7c4c4 !important;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.ds-hero-span {
+    font-size: 18px;
+    color: rgba(255, 255, 255, .6);
+}
+
+.ds-hero-lm {
+    color: #5c5959 !important;
+    font-size: 24px;
+    width: 160px;
+    height: 53px;
+    background: #FFFFFF !important;
+    border-radius: 4px;
+    border: none;
+    margin-top: 150px;
+    box-shadow: 2px 2px 3px black;
+}
+
+.ds-input {
+    height: 53px;
+    width: 75%;
+    float: right;
+    font-size: 19px;
+    color: #ffffff !important;
+    padding: 20px;
+    background: rgba(255, 255, 255, .3);
+    border: 0;
+    border-radius: 5px;
+}
+
+.ds-input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #eeeeee;
+}
+
+.ds-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #eeeeee;
+}
+
+.ds-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #eeeeee;
+}
+
+.ds-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #eeeeee;
+}
+
+.ds-submit {
+    height: 53px;
+    color: #EEE5E5 !important;
+    width: 147px;
+    border-radius: 4px;
+    border: none;
+    float: left;
+    font-size: 19px;
+    margin-left: 25px;
+    font-weight: 400;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
+    background: rgb(255, 174, 39);
+    background: -moz-linear-gradient(-45deg, rgba(255, 174, 39, 1) 0%, rgba(222, 73, 109, 1) 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(255, 174, 39, 1)), color-stop(100%, rgba(222, 73, 109, 1)));
+    background: -webkit-linear-gradient(-45deg, rgba(255, 174, 39, 1) 0%, rgba(222, 73, 109, 1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(255, 174, 39, 1) 0%, rgba(222, 73, 109, 1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(255, 174, 39, 1) 0%, rgba(222, 73, 109, 1) 100%);
+    background: linear-gradient(135deg, rgba(255, 174, 39, 1) 0%, rgba(222, 73, 109, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffae27', endColorstr='#de496d', GradientType=1);
+}
+
+.ds-cch {
+    height: 53px;
+    color: #EEE5E5 !important;
+    border-radius: 4px;
+    border: none;
+    font-size: 24px;
+    padding: 0 15px;
+}
+
+.ds-input-div {}
+
+.ds-offers {
+    color: #000000;
+    font-size: 36px;
+}
+
+.page-section {
+    padding: 140px 0 0 0;
+}
+
+.font-alt {
+    text-align: center;
+}
+
+.li-wp {
+    font-size: 0.9em;
+    padding-bottom: 10px;
+}
+
+.page-padding {
+    padding-bottom: 140px;
+}
+
+.hs-line-4 {
+    font-size: 19px;
+}
+
+div.banner-decription {
+    text-align: left;
+}
+
+div.banner-decription.banner-w {
+    color: #5f5f5f;
+}
+
+a.callout-w-bg {
+    color: #5f5f5f !important;
+}
+
+a.callout-w-bg:hover {
+    color: white !important;
+}
+
+.ds-h2 {
+    padding: 0 0 30px 0;
+}
+
+.ds-bgsection {
+    padding: 140px 0 !important;
+}
+
+.ds-herop {
+    line-height: 26px;
+    font-size: 18px;
+}
+
+.benefits-descr {
+    color: #1b331e;
+}
+
+.benefit-item {
+    height: 340px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px grey;
+}
+
+.benefit-title {
+    position: relative;
+    margin: 0 0 17px 0;
+    padding: 0;
+    font-size: 15px;
+    text-transform: uppercase !important;
+}
+
+.bg-dark-alfa-70 .YTPOverlay:before,
+.bg-dark-alfa-70:before {
+    height: 101% !important;
+}
+
+.ds-boxes-section {
+    padding: 0px !important;
+}
+
+.ds-boxes-overlay {
+    padding: 140px 0 !important;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ds-boxes-overlay .ds-h2 h2 {
+    color: black !important;
+}
+
+.ds-boxes-overlay .fa {
+    color: black !important;
+}
+
+.chr_btn {
+    height: 49px !important;
+    ;
+    width: auto;
+}
+
+.chr_link {
+    padding: 0 !important;
+    border: none !important;
+    margin-left: 20px;
+}
+
+.extra-heading {
+    margin-bottom: 1.6em;
+}
+
+.jus-whi-broadtext {
+    color: white !important;
+}
+
+.steps-div {
+    height: 300px;
+}
+
+.steps-icon {
+    position: absolute;
+    top: 40%;
+    right: -15px;
+    z-index: 3000;
+    color: green;
+}
+
+.non_arrow_box {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #88b7d5;
+    border: 2px solid #c2e1f5;
+}
+
+.arrow_box {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #88b7d5;
+    border: 2px solid #c2e1f5;
+}
+
+.arrow_box:after,
+.arrow_box:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow_box:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #88b7d5;
+    border-width: 30px;
+    margin-top: -30px;
+}
+
+.arrow_box:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-left-color: #c2e1f5;
+    border-width: 33px;
+    margin-top: -33px;
+}
+
+.num-img {
+    text-align: center;
+    margin: 2em 2em 1em;
+}
+
+.num-img.arrow-img {
+    margin: 3em;
+}
+
+.num-img.arrow-img img {
+    width: 3.5em;
+}
+
+.num-img img {
+    width: 2.5em;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.ds-steps-div {
+    padding: 0 5em;
+}
+
+.right-arrow {
+    height: 3.5em !important;
+    width: auto;
+    position: absolute;
+    top: 82%;
+    right: -2em;
+}
+
+.action-img img {
+    width: 100%;
+    height: auto;
+    padding: 0 5em;
+}
+
+.action-text {
+    text-align: center;
+}
+
+.action-text p {
+    font-size: 18px;
+    margin: 0 0 1em 0 !important;
+}
+
+.popover {
+    max-width: 500px;
+}
+
+.ds-hero-form {
+    max-width: 450px;
+    /* border: 2px solid orange; */
+    margin: 1em 0;
+    padding: 0.5em 0;
+    border-radius: 2px;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.ds-hero-form-text,
+.ds-hero-form-field {
+    display: inline-block;
+}
+
+.ds-hero-form-field input[type="text"] {
+    display: inline-block;
+    width: 350px;
+    color: white;
+    padding: 0 1em;
+    border-radius: 2px;
+    height: 48px;
+    background: transparent;
+    border: 2px solid orange;
+    letter-spacing: 2px;
+    text-align: left;
+    width: 375px;
+}
+
+.ds-hero-form-field input[type="text"]:focus {
+    background: #ffffff4f;
+}
+
+.ds-hero-form-field button {
+    margin-left: -50px;
+    margin-top: 0;
+    width: 45px;
+    margin-bottom: 4px;
+    height: 48px;
+    border: 2px solid transparent;
+    border-left: 2px solid white;
+    background-color: transparent;
+    border-radius: 0px !important;
+}
+
+.ds-hero-form-field button:hover,
+.ds-hero-form-field button:active,
+.ds-hero-form-field button:focus,
+.ds-hero-form-field button:selected {
+    margin-left: -50px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    width: 48px;
+    height: 48px;
+    border: 2px solid transparent;
+    border-left: 2px solid white;
+    background-color: transparent;
+    border-radius: 0px !important;
+}
+
+.ds-chr-extn-btn {
+    width: 375px;
+    margin-bottom: 15px;
+}
+
+.ds-for-whom {
+    padding-bottom: 70px;
+    font-size: 17px;
+    line-height: 2em;
+}
+
+.ds-for-whom .ds-big-text {
+    font-size: 21px;
+}
+
+.ds-hero-form-field input[type="text"]::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #ffffff87;
+    font-size: 13px;
+    text-align: left;
+}
+
+.ds-hero-form-field input[type="text"]:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #ffffff87;
+    opacity: 1;
+    font-size: 13px;
+    text-align: left;
+}
+
+.ds-hero-form-field input[type="text"]::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #ffffff87;
+    opacity: 1;
+    font-size: 13px;
+    text-align: left;
+}
+
+.ds-hero-form-field input[type="text"]:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #ffffff87;
+    font-size: 13px;
+}
+
+.ds-hero-form-field input[type="text"]::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #ffffff87;
+    font-size: 13px;
+    =
+}
+
+.ds-hero-dt h3 {
+    padding-top: 1.8em;
+    letter-spacing: 3px;
+}
+
+.ds-hero-dt h1 {
+    font-size: 28px !important;
+}
+
+.work-descr img {
+    height: 35px;
+    width: auto;
+    display: block;
+    margin: 1em auto;
+}
+
+.work-descr p {
+    margin-top: 0;
+}
+
+.work-img:after {
+    background: rgba(250, 250, 250, .8)
+}
+
+.work-intro {
+    top: 150px;
+}
+
+.work-d-text {
+    min-height: 80px;
+}
+
+ul.featrs-ul {
+    list-style: none;
+}
+
+ul.featrs-ul li:before {
+    content: '✓';
+    color: green;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.benefits-descr ul.featrs-ul {
+    width: 65%;
+    text-align: left;
+    margin: auto;
+}
+
+
+/* Steps Css */
+
+.wrapper {
+    margin: 1em auto;
+    padding: 0 10em;
+    width: 85%;
+    /* font-family: 'Helvetica'; */
+    font-size: 16px;
+}
+
+.StepProgress {
+    position: relative;
+    padding-left: 45px;
+    list-style: none;
+}
+
+.StepProgress::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 10px;
+    height: 80%;
+    border-left: 2px solid #3498db;
+}
+
+.StepProgress-item {
+    position: relative;
+    counter-increment: list;
+}
+
+.StepProgress-item:not(:last-child) {
+    padding-bottom: 5em;
+}
+
+.StepProgress-item::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: -30px;
+    height: 100%;
+    width: 10px;
+}
+
+.StepProgress-item::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -37px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #CCC;
+    border-radius: 50%;
+    background-color: #FFF;
+}
+
+.StepProgress-item.is-done::before {
+    border-left: 2px solid green;
+}
+
+.StepProgress-item.is-done::after {
+    content: "✔";
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border: 2px solid green;
+    background-color: green;
+}
+
+.StepProgress-item.current::before {
+    /* border-left: 2px solid green; */
+}
+
+.StepProgress-item.current::after {
+    content: counter(list);
+    width: 80px;
+    height: 80px;
+    top: 0px;
+    left: -70px;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    border: 3px solid #3498db;
+    background-color: #3498db;
+}
+
+.StepProgress strong {
+    display: block;
+}
+
+.StepProgress-item p {
+    font-size: 18px;
+    margin: 0 0 1em 0 !important;
+}
+
+.StepProgress-item div.step-content {
+    margin-left: 4em;
+}
+
+.step-content .step-icons-1 div {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    line-height: 45px;
+    color: #7b7171;
+    /* padding: 12px; */
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.step-content .step-icons-2 div {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    line-height: 50px;
+    color: #7b7171;
+    /* padding: 12px; */
+    text-align: center;
+    display: inline-block;
+}
+
+.step-content .step-icons-3 div {
+    width: 45px;
+    color: #7b7171;
+    height: 45px;
+    font-size: 22px;
+    line-height: 45px;
+    /* padding: 12px; */
+    text-align: center;
+    display: inline-block;
+}
+
+.ds-orange-h,
+.ds-orange-p {
+    color: orange !important;
+}
+
+.ds-orange-p {
+    font-size: 1.6em;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 568px) and (min-device-width: 320px) {
+    /* .owl-item {
+        width: 100% !important;
+    } */
+    .fullwidth-slider-work.owl-carousel.owl-theme.mobile-side-padding.itIsSliding.owl-loaded.owl-drag {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .benefit-item {
+        width: 85%;
+        padding: 15px;
+        height: auto;
+    }
+    .chr_btn {
+        width: 100%;
+        margin-left: 0;
+        height: 60px !important;
+    }
+    .ds_hero_btn {
+        font-size: 13px !important;
+        height: 52px !important;
+        line-height: 36px;
+        width: 90%;
+    }
+    .chr_link {
+        padding: 0 !important;
+        border: none !important;
+        margin-left: 0px !important;
+    }
+    .jus-whi-broadtext p {
+        display: block;
+    }
+    .ds-boxes-overlay {
+        padding: 50px 0 !important;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .ds-doyoukow {
+        margin-bottom: 0px !important;
+    }
+    .benefits-grid {
+        padding-bottom: 35px;
+    }
+    div.benefit-icon i.fa {
+        font-size: 50px;
+    }
+    .benefits-descr {
+        font-size: 14px;
+    }
+    .action-img img {
+        width: 100%;
+        height: auto;
+        padding: 0 !important;
+    }
+    .ds-steps-div {
+        padding: inherit;
+    }
+    .num-img.num-mobile {
+        padding-top: 3em !important;
+        padding-bottom: 3em !important;
+    }
+    .action-img {
+        padding: 0 2em;
+    }
+    .first-num-img {
+        padding-top: 2em;
+    }
+    .banner-description.ds-banner h1 {
+        font-size: 27px !important;
+    }
+    .banner-description.ds-banner button {
+        font-size: 11px !important;
+    }
+    .show-contact-us-verticals {
+        margin-top: 20px !important;
+    }
+    .ds-hero-form {
+        max-width: 100%;
+        /* border: 2px solid orange; */
+        margin: 1em 0;
+        padding: 0.5em 0;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .ds-hero-form-field {
+        width: 100%;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 48px !important;
+    }
+    .work-intro {
+        top: 0px!important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 48px !important;
+    }
+    .hs-line-11 {
+        font-size: 22px!important;
+        margin-top: 26px;
+    }
+    .ds-banner h1 {
+        font-size: 16px !important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 37px !important;
+        margin-top: 0 !important;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .ds-hero-form-field button {
+        height: 37px !important;
+    }
+    .ds-herop {
+        margin: 0.5em 0;
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+    .ds-banner h1 {
+        font-size: 24px !important;
+    }
+    .hs-line-11 {
+        font-size: 18px!important;
+        margin-top: 26px;
+    }
+    .work-intro {
+        opacity: 0.8 !important;
+        position: absolute !important;
+    }
+    .StepProgress-item div.step-content {
+        margin-left: 1em;
+    }
+    .StepProgress-item.current::after {
+        content: counter(list);
+        width: 40px;
+        height: 40px;
+        top: 0px;
+        left: -50px;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        border: 3px solid #3498db;
+        background-color: #3498db;
+    }
+    .wrapper {
+        padding: 2em;
+        width: 100%;
+        /* font-family: 'Helvetica'; */
+        font-size: 16px;
+    }
+    .step-content .step-icons-1 div {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 35px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+    .step-content .step-icons-2 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .step-content .step-icons-3 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .StepProgress::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 10px;
+        height: 70%;
+        border-left: 2px solid #3498db;
+    }
+    .work-descr {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 568px) and (min-device-width: 320px) {
+    /* .owl-item {
+        width: 100% !important;
+    } */
+    .fullwidth-slider-work.owl-carousel.owl-theme.mobile-side-padding.itIsSliding.owl-loaded.owl-drag {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .benefit-item {
+        width: 85%;
+        padding: 15px;
+        height: auto;
+    }
+    .chr_btn {
+        width: 100%;
+        margin-left: 0;
+        height: 60px !important;
+    }
+    .ds_hero_btn {
+        font-size: 13px !important;
+        height: 52px !important;
+        line-height: 36px;
+        width: 90%;
+    }
+    .chr_link {
+        padding: 0 !important;
+        border: none !important;
+        margin-left: 0px !important;
+    }
+    .jus-whi-broadtext p {
+        display: block;
+    }
+    .ds-boxes-overlay {
+        padding: 50px 0 !important;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .ds-doyoukow {
+        margin-bottom: 0px !important;
+    }
+    .benefits-grid {
+        padding-bottom: 35px;
+    }
+    div.benefit-icon i.fa {
+        font-size: 50px;
+    }
+    .benefits-descr {
+        font-size: 14px;
+    }
+    .action-img img {
+        width: 100%;
+        height: auto;
+        padding: 0 !important;
+    }
+    .ds-steps-div {
+        padding: inherit;
+    }
+    .num-img.num-mobile {
+        padding-top: 3em !important;
+        padding-bottom: 3em !important;
+    }
+    .action-img {
+        padding: 0 2em;
+    }
+    .first-num-img {
+        padding-top: 2em;
+    }
+    .banner-description.ds-banner h1 {
+        font-size: 27px !important;
+    }
+    .banner-description.ds-banner button {
+        font-size: 11px !important;
+    }
+    .show-contact-us-verticals {
+        margin-top: 20px !important;
+    }
+    .ds-hero-form {
+        max-width: 100%;
+        /* border: 2px solid orange; */
+        margin: 1em 0;
+        padding: 0.5em 0;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .ds-hero-form-field {
+        width: 100%;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .work-intro {
+        top: 0px!important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .ds-herop {
+        font-size: 14px;
+    }
+    .ds-herop {
+        margin: 0.5em 0;
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+    .ds-banner h1 {
+        font-size: 24px !important;
+    }
+    .hs-line-11 {
+        font-size: 18px!important;
+        margin-top: 26px;
+    }
+    .work-intro {
+        opacity: 0.8 !important;
+        position: absolute !important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 37px !important;
+        margin-top: 0 !important;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .ds-hero-form-field button {
+        height: 37px !important;
+    }
+    .ds-herop {
+        margin: 0.5em 0;
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+    .ds-banner h1 {
+        font-size: 24px !important;
+    }
+    .hs-line-11 {
+        font-size: 18px!important;
+        margin-top: 26px;
+    }
+    .StepProgress-item div.step-content {
+        margin-left: 1em;
+    }
+    .StepProgress-item.current::after {
+        content: counter(list);
+        width: 40px;
+        height: 40px;
+        top: 0px;
+        left: -50px;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        border: 3px solid #3498db;
+        background-color: #3498db;
+    }
+    .wrapper {
+        padding: 2em;
+        width: 100%;
+        /* font-family: 'Helvetica'; */
+        font-size: 16px;
+    }
+    .step-content .step-icons-1 div {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 35px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+    .step-content .step-icons-2 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .step-content .step-icons-3 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .StepProgress::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 10px;
+        height: 70%;
+        border-left: 2px solid #3498db;
+    }
+    .work-descr {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    /* .owl-item {
+        width: 100% !important;
+    } */
+    .fullwidth-slider-work.owl-carousel.owl-theme.mobile-side-padding.itIsSliding.owl-loaded.owl-drag {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .benefit-item {
+        width: 85%;
+        padding: 15px;
+        height: auto;
+    }
+    .chr_btn {
+        width: 100%;
+        margin-left: 0;
+        height: 60px !important;
+    }
+    .ds_hero_btn {
+        font-size: 13px !important;
+        height: 52px !important;
+        line-height: 36px;
+        width: 90%;
+    }
+    .chr_link {
+        padding: 0 !important;
+        border: none !important;
+        margin-left: 0px !important;
+    }
+    .jus-whi-broadtext p {
+        display: block;
+    }
+    .ds-boxes-overlay {
+        padding: 50px 0 !important;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .ds-doyoukow {
+        margin-bottom: 0px !important;
+    }
+    .benefits-grid {
+        padding-bottom: 35px;
+    }
+    div.benefit-icon i.fa {
+        font-size: 50px;
+    }
+    .benefits-descr {
+        font-size: 14px;
+    }
+    .action-img img {
+        width: 100%;
+        height: auto;
+        padding: 0 !important;
+    }
+    .ds-steps-div {
+        padding: inherit;
+    }
+    .num-img.num-mobile {
+        padding-top: 3em !important;
+        padding-bottom: 3em !important;
+    }
+    .action-img {
+        padding: 0 2em;
+    }
+    .first-num-img {
+        padding-top: 2em;
+    }
+    .banner-description.ds-banner h1 {
+        font-size: 27px !important;
+    }
+    .banner-description.ds-banner button {
+        font-size: 11px !important;
+    }
+    .show-contact-us-verticals {
+        margin-top: 20px !important;
+    }
+    .ds-hero-form {
+        max-width: 100%;
+        /* border: 2px solid orange; */
+        margin: 1em 0;
+        padding: 0.5em 0;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .ds-hero-form-field {
+        width: 100%;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 48px !important;
+    }
+    .step-content {
+        width: 100%;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 48px !important;
+    }
+    .work-intro {
+        opacity: 0.8 !important;
+        position: absolute !important;
+    }
+    .StepProgress-item div.step-content {
+        margin-left: 1em;
+    }
+    .StepProgress-item.current::after {
+        content: counter(list);
+        width: 40px;
+        height: 40px;
+        top: 0px;
+        left: -50px;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        border: 3px solid #3498db;
+        background-color: #3498db;
+    }
+    .wrapper {
+        padding: 2em;
+        width: 100%;
+        /* font-family: 'Helvetica'; */
+        font-size: 16px;
+    }
+    .step-content .step-icons-1 div {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 35px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+    .step-content .step-icons-2 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .work-intro {
+        top: 0px!important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 37px !important;
+        margin-top: 0 !important;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .ds-hero-form-field button {
+        height: 37px !important;
+    }
+    .ds-herop {
+        margin: 0.5em 0;
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+    .ds-banner h1 {
+        font-size: 24px !important;
+    }
+    .hs-line-11 {
+        font-size: 18px!important;
+        margin-top: 26px;
+    }
+    .step-content .step-icons-3 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .StepProgress::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 10px;
+        height: 70%;
+        border-left: 2px solid #3498db;
+    }
+    .work-descr {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .benefit-item {
+        width: 85%;
+        padding: 15px;
+        height: auto;
+    }
+    .chr_btn {
+        width: 100%;
+        margin-left: 0;
+        height: 60px !important;
+    }
+    .ds_hero_btn {
+        font-size: 13px !important;
+        height: 52px !important;
+        line-height: 36px;
+        width: 90%;
+    }
+    .chr_link {
+        padding: 0 !important;
+        border: none !important;
+        margin-left: 0px !important;
+    }
+    .jus-whi-broadtext p {
+        display: block;
+    }
+    .ds-boxes-overlay {
+        padding: 50px 0 !important;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .ds-doyoukow {
+        margin-bottom: 0px !important;
+    }
+    .benefits-grid {
+        padding-bottom: 35px;
+    }
+    div.benefit-icon i.fa {
+        font-size: 50px;
+    }
+    .benefits-descr {
+        font-size: 14px;
+    }
+    .action-img img {
+        width: 100%;
+        height: auto;
+        padding: 0 !important;
+    }
+    .ds-steps-div {
+        padding: inherit;
+    }
+    .num-img.num-mobile {
+        padding-top: 3em !important;
+        padding-bottom: 3em !important;
+    }
+    .action-img {
+        padding: 0 2em;
+    }
+    .first-num-img {
+        padding-top: 2em;
+    }
+    .banner-description.ds-banner h1 {
+        font-size: 27px !important;
+    }
+    .banner-description.ds-banner button {
+        font-size: 11px !important;
+    }
+    .show-contact-us-verticals {
+        margin-top: 20px !important;
+    }
+    .ds-hero-form {
+        max-width: 100%;
+        /* border: 2px solid orange; */
+        margin: 1em 0;
+        padding: 0.5em 0;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .ds-hero-form-field {
+        width: 100%;
+    }
+    .ds-hero-form-field input {
+        height: 48px !important;
+        width: 98% !important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 48px !important;
+    }
+    .work-descr {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    .step-content {
+        width: 100%;
+    }
+    .work-intro {
+        top: 0px!important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 37px !important;
+        margin-top: 0 !important;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .ds-hero-form-field button {
+        height: 37px !important;
+    }
+    .work-intro {
+        opacity: 0.8 !important;
+        position: absolute !important;
+    }
+    .ds-herop {
+        margin: 0.5em 0;
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+    .ds-banner h1 {
+        font-size: 24px !important;
+    }
+    .hs-line-11 {
+        font-size: 18px!important;
+        margin-top: 26px;
+    }
+    .StepProgress-item div.step-content {
+        margin-left: 1em;
+    }
+    .StepProgress-item.current::after {
+        content: counter(list);
+        width: 40px;
+        height: 40px;
+        top: 0px;
+        left: -50px;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        border: 3px solid #3498db;
+        background-color: #3498db;
+    }
+    .wrapper {
+        padding: 2em;
+        width: 100%;
+        /* font-family: 'Helvetica'; */
+        font-size: 16px;
+    }
+    .step-content .step-icons-1 div {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 35px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+    .step-content .step-icons-2 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .step-content .step-icons-3 div {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .StepProgress::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 10px;
+        height: 70%;
+        border-left: 2px solid #3498db;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .al-center {
+        text-align: center !important;
+    }
+    .benefit-item {
+        width: 85%;
+        padding: 15px;
+        height: auto;
+    }
+    .chr_btn {
+        width: 100%;
+        margin-left: 0;
+        height: 70px !important;
+    }
+    .ds_hero_btn {
+        font-size: 13px !important;
+        height: 52px !important;
+        line-height: 36px;
+        width: 90%;
+    }
+    .chr_link {
+        padding: 0 !important;
+        border: none !important;
+        margin-left: 0px !important;
+    }
+    .jus-whi-broadtext p {
+        display: block;
+    }
+    .ds-boxes-overlay {
+        padding: 50px 0 !important;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .ds-doyoukow {
+        margin-bottom: 0px !important;
+    }
+    .benefits-grid {
+        padding-bottom: 35px;
+    }
+    div.benefit-icon i.fa {
+        font-size: 50px;
+    }
+    .benefits-descr {
+        font-size: 14px;
+    }
+    .action-img img {
+        width: 100%;
+        height: auto;
+        padding: 0 !important;
+    }
+    .ds-steps-div {
+        padding: inherit;
+    }
+    .num-img.num-mobile {
+        padding-top: 3em !important;
+        padding-bottom: 3em !important;
+    }
+    .action-img {
+        padding: 0 2em;
+    }
+    .first-num-img {
+        padding-top: 2em;
+    }
+    .banner-description.ds-banner h1 {
+        font-size: 27px !important;
+    }
+    .banner-description.ds-banner button {
+        font-size: 11px !important;
+    }
+    .show-contact-us-verticals {
+        margin-top: 20px !important;
+    }
+    .ds-hero-form {
+        max-width: 100%;
+        /* border: 2px solid orange; */
+        margin: 1em 0;
+        padding: 0.5em 0;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .ds-hero-form-field {
+        width: 100%;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 37px !important;
+        margin-top: 0 !important;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .ds-hero-form-field button {
+        height: 37px !important;
+    }
+    .work-descr {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    .step-content {
+        width: 100%;
+    }
+    .work-intro {
+        top: 0px!important;
+    }
+    .ds-chr-extn-btn {
+        width: 98% !important;
+        height: 37px !important;
+        margin-top: 0 !important;
+    }
+    .ds-hero-form-field input {
+        width: 98% !important;
+        height: 37px !important;
+    }
+    .ds-hero-form-field button {
+        height: 37px !important;
+    }
+    .ds-herop {
+        margin: 0.5em 0;
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+    .ds-banner h1 {
+        font-size: 24px !important;
+    }
+    .hs-line-11 {
+        font-size: 18px!important;
+        margin-top: 26px;
+    }
+    .work-intro {
+        opacity: 0.8 !important;
+        position: absolute !important;
+    }
+    .StepProgress-item div.step-content {
+        margin-left: 1em;
+    }
+    .StepProgress-item.current::after {
+        content: counter(list);
+        width: 40px;
+        height: 40px;
+        top: 0px;
+        left: -50px;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        border: 3px solid #3498db;
+        background-color: #3498db;
+    }
+    .wrapper {
+        padding: 2em;
+        width: 100%;
+        /* font-family: 'Helvetica'; */
+        font-size: 16px;
+    }
+    .step-content .step-icons-1 div {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 35px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+    .step-content .step-icons-2 div {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .step-content .step-icons-3 div {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 50px;
+        /* padding: 12px; */
+        text-align: center;
+        display: inline-block;
+    }
+    .StepProgress::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 10px;
+        height: 70%;
+        border-left: 2px solid #3498db;
+    }
+}
+
+
+
+@media screen (max-width: 600px)
+{
+	.ds-submit
+	{
+		width:100% !important;
+	}
+	
+	#thebactrak-logo1 {
+    width: 100% !important;
+   }
+   .form_changes
+   {
+	   margin:78px 0 0 0;
+   }
+}

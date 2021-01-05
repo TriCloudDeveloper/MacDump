@@ -1,0 +1,832 @@
+var monthactivityGlobal = [];
+
+function getAffinityLevel(highestCount, count) {
+    return ((count * 10) / highestCount).toFixed(0);
+}
+
+function getpt(total, val) {
+    if (total == 0) {
+        return 0;
+    } else
+        return ((val / total) * 100).toFixed(0);
+}
+
+function createPersonalitySection(data) {
+    var _html = '';
+    var total_mood = 0;
+    if (!_.isEmpty(data.mood) && !_.isEmpty(data.mood.primary)) {
+        _.map(data.mood.primary, function(num, key) {
+            total_mood = total_mood + num;
+        })
+    }
+    console.log(total_mood);
+    if ((!data.hasOwnProperty('personality_analysis') || _.isEmpty(data.personality_analysis) || _.isEmpty(data.personality_analysis.personality_description)) &&
+        (!data.hasOwnProperty('personality_analysis') || _.isEmpty(data.personality_analysis.sentiment)) &&
+        (!data.hasOwnProperty('personality_analysis') || _.isEmpty(data.personality_analysis.disc_assessment)) &&
+        (!data.hasOwnProperty('personality_analysis') || _.isEmpty(data.personality_analysis.psychometrics)) &&
+        (!data.hasOwnProperty('mood') || _.isEmpty(data.mood) || _.isEmpty(data.mood.primary))) {
+        _html += '<p class="error-msg-p">No data available</p>';
+        $('#personality_section_share').hide();
+        $('#personality_section_download').hide();
+    } else {
+        $('#personality_section_share').show();
+        $('#personality_section_download').show();
+        _html += '<div class="col-md-12">' +
+            '</h3><div class="horizontal-icons-div" style="text-align:center;margin-bottom: 20px">';
+        if (data.hasOwnProperty('personality_analysis') && data.personality_analysis.hasOwnProperty('psychometrics') && !_.isEmpty(data.personality_analysis.psychometrics)) {
+            if (data.hasOwnProperty('personality_analysis') && data.personality_analysis.hasOwnProperty('psychometrics') && data.personality_analysis.psychometrics.hasOwnProperty('extraversion')) {
+                // $('#extraversion').html(data.personality_analysis.psychometrics.extraversion);
+                _html += '<div class="horizontal-block personality-trait">' +
+                    '<div class="in-bl" data-toggle="tooltip" title="Energy, positive emotions, assertiveness, sociability and the tendency to seek stimulation in the company of others, and talkativeness. High extraversion is often perceived as attention-seeking, and domineering. Low extraversion causes a reserved, reflective personality, which can be perceived as aloof or self-absorbed.">' +
+                    '<span class="horz-text" style="color:#5f50f2;" id="extraversion">' + data.personality_analysis.psychometrics.extraversion + '</span>' +
+                    '<span class="out-of-text ptraits">Extraversion</span>' +
+                    '</div></div>';
+            }
+            if (data.personality_analysis.psychometrics.hasOwnProperty('emotional_stability')) {
+                _html += '<div class="horizontal-block personality-trait">' +
+                    '<div class="in-bl" data-toggle="tooltip" title="A tendency to experience unpleasant emotions easily, such as anger, anxiety, depression, and vulnerability. A high need for stability manifest as stable and calm personality, but can be seen as uninspiring and unconcerned. A low need for stability causes a reactive and excitable personality, often very dynamic individuals, but they can be perceived as unstable or insecure.">' +
+                    '<span class="horz-text" style="color:#2ba271" id="emotional_stability">' + data.personality_analysis.psychometrics.emotional_stability + '</span>' +
+                    '<span class="out-of-text ptraits">Emotional Stability</span>' +
+                    '</div></div>';
+            }
+            if (data.personality_analysis.psychometrics.hasOwnProperty('agreeableness')) {
+
+                _html += '<div class="horizontal-block personality-trait">' +
+                    '<div class="in-bl" data-toggle="tooltip" title="A tendency to be compassionate and cooperative rather than suspicious and antagonistic towards others. It is also a measure of one\'s trusting and helpful nature, and whether a person is generally well-tempered or not. High agreeableness is often seen as naive or submissive. Low agreeableness personalities are often competitive or challenging people, which can be seen as argumentative or untrustworthy.">' +
+                    '<span class="horz-text" style="color:#ff860d" id="agreeableness">' + data.personality_analysis.psychometrics.agreeableness + '</span>' +
+                    '<span class="out-of-text ptraits">Agreeableness</span>' +
+                    '</div></div>';
+            }
+            if (data.personality_analysis.psychometrics.hasOwnProperty('conscientiousness')) {
+
+                _html += '<div class="horizontal-block personality-trait">' +
+                    '<div class="in-bl" data-toggle="tooltip" title="A tendency to be organized and dependable, show self-discipline, act dutifully, aim for achievement, and prefer planned rather than spontaneous behavior. High conscientiousness often perceived as stubborn and obsessive. Low conscientiousness are flexible and spontaneous, but can be perceived as sloppy and unreliable.">' +
+                    '<span class="horz-text" style="color:#1593be" id="conscientiousness">' + data.personality_analysis.psychometrics.conscientiousness + '</span>' +
+                    '<span class="out-of-text ptraits">Conscientiousness</span>' +
+                    '</div>' +
+                    '</div>';
+            }
+        } else {
+            _html += '<p class="error-msg-p">No data available</p>';
+        }
+
+        _html +='</div></div>';
+        if (data.hasOwnProperty('personality_analysis') && data.personality_analysis.hasOwnProperty('personality_description') && data.personality_analysis.personality_description != null && data.personality_analysis.personality_description != undefined) {
+            _html += '<p class="bottom-txt" style="color:#c1cfe4;float: none !important; font-size:16px" id="personality_description">' + data.personality_analysis.personality_description + '</p>';
+
+        } else {
+            _html += '<p class="bottom-txt" style="color:#c1cfe4;float: none !important" id="personality_description"></p>';
+
+        }
+        _html += '<div class="row row-centered">' +
+            '<div class="col-md-4">' +
+            '<h3 class="head-3">' +
+            '<span data-toggle="tooltip" title="" data-original-title="Overall sentiment exhibited by the given user over all the tweets">Sentiment</span></h3>' +
+            '<div class="icons-div" id="sentiment_subsection">';
+        if (_.isEmpty(data.personality_analysis.sentiment)) {
+            _html += '<p class="error-msg-p">No data available</p>';
+        } else {
+            var g_sentiment = '';
+            if (data.personality_analysis.sentiment.positive_sentiment >= data.personality_analysis.sentiment.negative_sentiment && data.personality_analysis.sentiment.positive_sentiment >= data.personality_analysis.sentiment.neutral_sentiment) {
+                g_sentiment = 'positive';
+            } else if (data.personality_analysis.sentiment.negative_sentiment >= data.personality_analysis.sentiment.positive_sentiment && data.personality_analysis.sentiment.negative_sentiment >= data.personality_analysis.sentiment.neutral_sentiment) {
+                g_sentiment = 'negative';
+            } else {
+                g_sentiment = 'neutral';
+            }
+
+            _html += '<div class="ind-icon first mr-30">' +
+                '<img src="dsense/positive_highlight.png" alt="">' +
+                '<span class="adj-text sentiment active" id="positive_sentiment">' + data.personality_analysis.sentiment.positive_sentiment.toFixed(0) + '%</span>' +
+                '<span class="out-of-text">Positive</span>' +
+                '</div>' +
+                '<div class="ind-icon mr-30">' +
+                '<img src="dsense/neutral_highlight.png" alt="">' +
+                '<span class="adj-text sentiment active" id="neutral_sentiment">' + data.personality_analysis.sentiment.neutral_sentiment.toFixed(0) + '%</span>' +
+                '<span class="out-of-text">Neutral</span>' +
+                '</div>' +
+                '<div class="ind-icon mr-30">' +
+                '<img src="dsense/negative_highlight.png" alt="">' +
+                '<span class="adj-text sentiment active" id="negative_sentiment">' + data.personality_analysis.sentiment.negative_sentiment.toFixed(0) + '%</span>' +
+                '<span class="out-of-text">Negative</span>' +
+                '</div>';
+        }
+        _html += '</div></div>';
+        _html += '<div class="col-md-6">' +
+            '<h3 class="head-3" style="margin-top:20px">' +
+            '<span data-toggle="tooltip" title="Overall mood exhibited by the given user over all the tweets">Mood</span></h3>' +
+            '<div class="icons-div" id="mood_subsection">';
+        if (_.isEmpty(data.mood) || _.isEmpty(data.mood.primary) || total_mood.toFixed(0) == 0) {
+            _html += '<p class="error-msg-p">No data available</p>';
+        } else {
+            var g_mood = '';
+
+            if (data.mood.primary.action >= data.mood.primary.anxiety && data.mood.primary.action >= data.mood.primary.calm && data.mood.primary.action >= data.mood.primary.depression) {
+                g_mood = 'active';
+            } else if (data.mood.primary.anxiety >= data.mood.primary.action && data.mood.primary.anxiety >= data.mood.primary.calm && data.mood.primary.anxiety >= data.mood.primary.depression) {
+                g_mood = 'anxious';
+            } else if (data.mood.primary.calm >= data.mood.primary.action && data.mood.primary.calm >= data.mood.primary.anxiety && data.mood.primary.calm >= data.mood.primary.depression) {
+                g_mood = 'calm';
+            } else if (data.mood.primary.depression >= data.mood.primary.action && data.mood.primary.depression >= data.mood.primary.anxiety && data.mood.primary.depression >= data.mood.primary.calm) {
+                g_mood = 'depressed';
+            }
+
+            _html += '<div class="ind-icon first mr-30">' +
+                '<img src="dsense/active_highlight.png" alt="">' +
+                '<span class="adj-text sentiment active" id="mood_active">' + data.mood.primary.action.toFixed(0) + '%</span>' +
+                '<span class="out-of-text">Active</span>' + '</div>' +
+                '<div class="ind-icon mr-30">' +
+                '<img src="dsense/anxious_highlight.png" alt="">' +
+                '<span class="adj-text sentiment active" id="mood_anxious">' + data.mood.primary.anxiety.toFixed(0) + '%</span>' +
+                '<span class="out-of-text">Anxious</span>' +
+                '</div>' +
+                '<div class="ind-icon mr-30">' +
+                '<img src="dsense/calm_highlight.png" alt="">' +
+                '<span class="adj-text sentiment active" id="mood_calm">' + data.mood.primary.calm.toFixed(0) + '%</span>' +
+                '<span class="out-of-text">Calm</span>' +
+                '</div>' +
+                '<div class="ind-icon mr-30">' +
+                '<img src="dsense/depressed_highlight.png" alt="">' +
+                '<span class="adj-text sentiment active" id="mood_depressed">' + data.mood.primary.depression.toFixed(0) + '%</span>' +
+                '<span class="out-of-text">Depressed</span>' +
+                '</div>';
+        }
+
+        _html += '</div></div>';
+        _html += '<div class="col-md-6">' +
+            '<h3 class="head-3" style="margin-top:20px">' +
+            '<span data-toggle="tooltip" title="An individual\'s assessment on four different behavioral traits: Dominance, Influence, Steadiness, and Calculativeness.">DISC Assessment</span></h3>' +
+            '<div class="icons-div" id="disc_subsection">';
+        if (_.isEmpty(data.personality_analysis.disc_assessment)) {
+            _html += '<p class="error-msg-p">No data available</p>';
+        } else {
+            _html += '<div class="disc_graph" id="disc_graph" style="display: block; height:300px;"></div>';
+            _html += '<div class="row mt-20">'+
+            '<div class="col-lg-12 legend_flex">'+
+              '<span><span>D</span> Dominance</span>'+
+              '<span><span>I</span> Influence</span>'+
+            '</div>'+
+          '</div>'+
+          '<div class="row">'+
+            '<div class="col-lg-12 legend_flex">'+
+              '<span><span>S</span> Steadiness</span>'+
+              '<span><span>C</span> Calculativeness</span>'+
+            '</div>'+
+          '</div>';
+        }
+        
+        _html += '</div></div>';
+        _html += '</div>';
+        
+
+
+    }
+    $('#personality_container').html(_html);
+
+
+    if(data.hasOwnProperty('personality_analysis') && data.personality_analysis.hasOwnProperty('disc_assessment')
+    && !_.isEmpty(data.personality_analysis.disc_assessment)) {
+        var disc_data = {
+            name: "DISC",
+            data: [],
+            pointPlacement: 'on'
+        };
+    
+        var temp = [];
+        var cats = [];
+        if(data.personality_analysis.disc_assessment.hasOwnProperty('dominance')
+        && !_.isEmpty(data.personality_analysis.disc_assessment.dominance)){
+            temp.push(data.personality_analysis.disc_assessment.dominance.score);
+            cats.push("D("+data.personality_analysis.disc_assessment.dominance.score+")");
+        } else {
+            temp.push(0);
+            cats.push("D("+0+")");
+        }
+        if(data.personality_analysis.disc_assessment.hasOwnProperty('influence')
+        && !_.isEmpty(data.personality_analysis.disc_assessment.influence)){
+            temp.push(data.personality_analysis.disc_assessment.influence.score);
+            cats.push("I("+data.personality_analysis.disc_assessment.influence.score+")");
+        } else {
+            temp.push(0);
+            cats.push("I("+0+")");
+        }
+        if(data.personality_analysis.disc_assessment.hasOwnProperty('steadiness')
+        && !_.isEmpty(data.personality_analysis.disc_assessment.steadiness)){
+            temp.push(data.personality_analysis.disc_assessment.steadiness.score);
+            cats.push("S("+data.personality_analysis.disc_assessment.steadiness.score+")");
+        } else {
+            temp.push(0);
+            cats.push("S("+0+")");
+        }
+        if(data.personality_analysis.disc_assessment.hasOwnProperty('calculativeness')
+        && !_.isEmpty(data.personality_analysis.disc_assessment.calculativeness)){
+            temp.push(data.personality_analysis.disc_assessment.calculativeness.score);
+            cats.push("C("+data.personality_analysis.disc_assessment.calculativeness.score+")");
+        } else {
+            temp.push(0);
+            cats.push("C("+0+")");
+        }
+
+        disc_data.data = temp;
+        
+
+        Highcharts.chart('disc_graph', {
+            chart: {
+              polar: true,
+              type: 'line',
+              backgroundColor:'rgba(255, 255, 255, 0.0)'
+            },
+        
+            title: {
+              text: null,
+              x: -80
+            },
+        
+            pane: {
+        
+            },
+            showInLegend: true,
+            xAxis: {
+              categories: cats,
+              tickmarkPlacement: 'on',
+              lineWidth: 0,
+              labels: {
+                style: {
+                    color: 'white'
+                }
+              }
+            },
+        
+            yAxis: {
+              gridLineInterpolation: 'polygon',
+              lineWidth: 0,
+              min: 0,
+              gridLineWidth: 0.2,
+              labels: {
+                style: {
+                    color: 'white'
+                }
+              }
+            },
+            credits: {
+                enabled: false
+            },
+    
+            series: [disc_data],
+            plotOptions: {
+                series: {
+                    color: '#f18d3c'
+                }
+            },
+            tooltip: {
+              enabled: false,
+              backgroundColor: null,
+              borderWidth: 0,
+              shadow: false,
+              useHTML: true,
+              style: {
+                padding: 0
+              },
+              formatter: function(){
+                return '<div class="highcharts_modified_tooltip">'
+                  + '<div class="highcharts_modified_tooltip_label">' + this.key + '</div>'
+                  + '<div class="highcharts_modified_tooltip_value">Score: ' + Math.round(this.y * 10) / 10 + '</div>'
+                  + '</div>';
+        
+              }
+            },
+            legend: {
+              enabled: false
+            }
+        });
+    }
+
+
+
+}
+
+function createSocialActivitySection(data, score, klout_level) {
+    var _html = '';
+    var todsum = 0;
+    if (data.hasOwnProperty('social_activity') && !_.isEmpty(data.social_activity) && data.social_activity.hasOwnProperty('activity') && !_.isEmpty(data.social_activity.activity) && data.social_activity.activity.hasOwnProperty('time_of_day') && !_.isEmpty(data.social_activity.activity.time_of_day)) {
+        data.social_activity.activity.time_of_day.forEach(function(el, i) {
+            todsum += el.count;
+        })
+    }
+    // console.log(_.isEmpty(data.social_activity.activity.month_of_year));
+    // console.log(score);
+    // console.log(_.isEmpty(data.social_activity.activity.time_of_day));
+    // console.log(_.isEmpty(data.social_interactions.user_mentions));
+    // console.log(_.isEmpty(data.social_activity.user_authority));
+    // console.log(todsum);
+    if ((!data.hasOwnProperty('social_activity') || _.isEmpty(data.social_activity) || !data.social_activity.hasOwnProperty('activity') || _.isEmpty(data.social_activity.activity) || data.social_activity.activity.hasOwnProperty('month_of_year') || _.isEmpty(data.social_activity.activity.month_of_year)) && score == 0 && todsum == 0 && (!data.hasOwnProperty('social_activity') || _.isEmpty(data.social_activity) || !data.social_activity.hasOwnProperty('user_mentions') || _.isEmpty(data.social_activity.user_mentions)) && (!data.hasOwnProperty('social_activity') || _.isEmpty(data.social_activity) || !data.social_activity.hasOwnProperty('user_authority') || _.isEmpty(data.social_activity.user_authority))) {
+        _html += '<p class="error-msg-p">No data available.</p>';
+        $('#social_activity_section_share').hide();
+        $('#social_activity_section_download').hide();
+    } else {
+        $('#social_activity_section_share').show();
+        $('#social_activity_section_download').show();
+        _html += '<div class="container relative"><div class="col-md-6">';
+
+        if (data.hasOwnProperty('social_activity') && data.social_activity.hasOwnProperty('user_authority') || score != 0) {
+            _html += '<div style="display:flex" class="klout-mobile">';
+            if (data.hasOwnProperty('social_activity') && data.social_activity.hasOwnProperty('user_authority')) {
+
+                var authority = (data.social_activity.user_authority).toFixed(1);
+
+                var authM = '';
+                if (authority <= 0.5) authM = 'Very Low';
+                else if (authority > 0.5 && authority <= 2.5) authM = 'Low';
+                else if (authority > 2.5 && authority <= 4.5) authM = 'Medium';
+                else if (authority > 4.5 && authority < 7) authM = 'High';
+                else authM = 'Very High';
+                _html += '<div id="influence-holder">' +
+                    '<div data-toggle="tooltip" title="A Klout-like measure of influence the given user has on social media" class="adjoining-text">' +
+                    '<span id="auth-measure" class="adj-text activity-text">' + authM + '</span>' +
+                    '<span class="out-of-text" style="color:#44484e; font-weight:bold">Social Influence</span>' +
+                    '</div>' +
+                    '<div class="auth-score-block">' +
+                    '<div class="round-text" style="display:flex; flex-direction:column">' +
+                    '<span id="authority" class="score-text">' + authority + '</span>' +
+                    '<span class="out-of-text" style="color:white; font-size:10px;">out of 10</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+            }
+            if (score != 0 && typeof(score) == 'number') {
+                _html += '<div id="influence-holder-klout">' +
+                    '<div data-toggle="tooltip" title="" class="adjoining-text">' +
+                    '<span id="klout-measure" class="adj-text activity-text">' + klout_level + '</span>' +
+                    '<span class="out-of-text" style="color:#44484e; font-weight:bold">Klout Score</span>' +
+                    '</div>' +
+                    '<div class="auth-score-block" id="klout-flag">' +
+                    '<img src="klout/score-flags/70x65/klout-score_70x65_' + score + '.png">' +
+                    '</div>' +
+                    '</div>';
+            }
+            _html += '</div>';
+        }
+
+        if (data.hasOwnProperty('social_activity') && data.social_activity.hasOwnProperty('activity') && data.social_activity.activity.hasOwnProperty('time_of_day')) {
+            var activity_day = [];
+            activity_day = data.social_activity.activity.time_of_day.sort(function(a, b) {
+                return -(a.count - b.count)
+            });
+            activity_day = activity_day.filter(function(t, i) {
+                return t;
+            })
+
+            var activity_per = [];
+            var act_total = 0;
+
+            activity_day.forEach(function(element) {
+                act_total = act_total + element.count;
+            });
+            var afternoon_html = '',
+                em_html = '',
+                eve_html = '',
+                night_html = '',
+                ln_html = '',
+                fnoon_html = '';
+            activity_day.forEach(function(element, i) {
+                if (element.time == 'Afternoon') {
+                    afternoon_html = getpt(act_total, element.count) + '%';
+                } else if (element.time == 'Early Morning') {
+                    em_html = getpt(act_total, element.count) + '%';
+                } else if (element.time == 'Evening') {
+                    eve_html = getpt(act_total, element.count) + '%';
+                } else if (element.time == 'Night') {
+                    night_html = getpt(act_total, element.count) + '%';
+                } else if (element.time == 'Late Night') {
+                    ln_html = getpt(act_total, element.count) + '%';
+                } else if (element.time == 'Forenoon') {
+                    fnoon_html = getpt(act_total, element.count) + '%';
+                }
+            })
+
+            var activityId = '';
+            var ma_html = '';
+            if (!_.isEmpty(activity_day) && activity_day[0].count != 0) {
+                activityId = activity_day[0].time.replace(' ', '-');
+                if (activityId == 'Forenoon') {
+                    ma_html = 'Mostly Active : <span style="color:#3e4fc5">Morning</span>';
+                } else {
+                    ma_html = 'Mostly Active : <span style="color:#3e4fc5">' + activityId.replace('-', ' ') + '</span>';
+                }
+            }
+            _html += '<hr class="mt-0 mb-0 " />' +
+                '<h3 class="head-3"  style="color:black; margin-top:25px">' +
+                '<span id="activity-heading" data-toggle="tooltip" title="Part of the day when the given user is most active on social media">' + ma_html + '<span></h3>';
+            if (act_total != 0) {
+                _html += '<div class="icons-div" id="activity-icons">' +
+                    '<div class="ind-icon" style="width:15%">' +
+                    '<img class="act-image" src="dsense/early_morning.png" alt="">' +
+                    '<span class="adj-text act-text activity-text" id="Early-Morning">' + em_html + '</span>' +
+                    '<span class="out-of-text">Early Morning</span>' +
+                    '</div>' +
+                    '<div class="ind-icon first" style="width:15%">' +
+                    '<img class="act-image" src="dsense/morning.png" alt="">' +
+                    '<span class="adj-text act-text activity-text" id="Morning">' + fnoon_html + '</span>' +
+                    '<span class="out-of-text">Morning</span>' +
+                    '</div>' +
+                    '<div class="ind-icon" style="width:15%">' +
+                    '<img class="act-image" src="dsense/afternoon.png" alt="">' +
+                    '<span class="adj-text act-text activity-text" id="Afternoon">' + afternoon_html + '</span>' +
+                    '<span class="out-of-text">Afternoon</span>' +
+                    '</div>' +
+                    '<div class="ind-icon" style="width:15%">' +
+                    '<img class="act-image" src="dsense/evening.png" alt="">' +
+                    '<span class="adj-text act-text activity-text" id="Evening">' + eve_html + '</span>' +
+                    '<span class="out-of-text">Evening</span>' +
+                    '</div>' +
+                    '<div class="ind-icon" style="width:15%">' +
+                    '<img class="act-image" src="dsense/night.png" alt="">' +
+                    '<span class="adj-text act-text activity-text" id="Night">' + night_html + '</span>' +
+                    '<span class="out-of-text">Night</span>' +
+                    '</div>' +
+                    '<div class="ind-icon last" style="width:15%">' +
+                    '<img class="act-image" src="dsense/late_night.png" alt="">' +
+                    '<span class="adj-text act-text activity-text" id="Late-Night">' + ln_html + '</span>' +
+                    '<span class="out-of-text">Late-Night</span>' +
+                    '</div>' +
+                    '<span style="color:#A7AAB3; margin-top:25px; display:block" id="activity_summary"></span>' +
+                    '</div><hr class="mt-0 mb-30 " />';
+            }
+
+            if (data.hasOwnProperty('social_activity') && data.social_activity.hasOwnProperty('activity') && data.social_activity.activity.hasOwnProperty('month_of_year')) {
+                var _act = [];
+                _act = data.social_activity.activity.month_of_year;
+
+                monthactivityGlobal = [];
+                // if (!_.isEmpty(_act)) {
+                //     Object.keys(_act).forEach(function(year) {
+                //         Object.keys(_act[year]).forEach(function(month) {
+                //             monthactivityGlobal.push([month + ", " + year, _act[year][month]]);
+                //         })
+                //     })
+                // }
+
+                if(!_.isEmpty(_act)) {
+                    console.log("getLastMonths: " + getLastMonths());
+                    getLastMonths().forEach(function(val) {
+                        var month = val.split(', ')[0];
+                        var year = val.split(', ')[1];
+                        if(_act.hasOwnProperty(year) && _act[year].hasOwnProperty(month)) {
+                            monthactivityGlobal.push([month + ", " + year, _act[year][month]]);
+                        } else {
+                            monthactivityGlobal.push([month + ", " + year, 0]);
+                        }
+                    });
+                }
+
+                console.log("monthactivityGlobal: " + monthactivityGlobal);
+                var x = [];
+                x = monthactivityGlobal
+                .sort(function(a, b) {
+                    return new Date(a[0]).getTime() > new Date(b[0]).getTime() ? 1 : -1;
+                })
+                .map(function(el, i) {
+                    return {
+                        name: el[0],
+                        marker: { enabled: true },
+                        borderColor: Highcharts.getOptions().colors[i],
+                        data: [{
+                            color: Highcharts.getOptions().colors[i],
+                            radius: 10 * (15 - i) + "%",
+                            innerRadius: 10 * (15 - i) + "%",
+                            y: el[1]
+                        }],
+                        showInLegend: true
+                    }
+                })
+
+                
+
+
+
+                _html += '<div id="user-activity-holder">' +
+                    '<h3 class="head-3 head-3-ua" data-toggle="tooltip" title="Social Activity in terms of tweets posted by a given user over a given time period" style="color:#11131e;margin-bottom: 0;">User Activity Trend</h3>' +
+                    '</div>' +
+                    '<div class="tab-content">' +
+                    '<div class="tab-pane active" id="monthly" role="tabpanel">' +
+                    '<div id="guage" style="width: 100%;"><p class="error-msg-p p-left">No data available</p></div>' +
+                    '</div>' +
+                    '<div class="tab-pane" id="daily" role="tabpanel">' +
+                    '<div id="guage1" style="height:200px; width: 400px;"></div>' +
+                    '</div>' +
+                    '</div>';
+                // if (monthactivityGlobal.length == 0) {
+                //     $('#guage').html('<p class="error-msg-p">No data available</p>');
+                //} 
+                _html += '</div><hr class="hidden-xl hidden-lg hidden-md">';
+
+                if (!monthactivityGlobal.length == 0) {
+                    setTimeout(function() {
+                        $('#guage').css('height', '250px');
+                        Highcharts.chart('guage', {
+                            chart: {
+                                type: 'solidgauge',
+                                marginTop: 0,
+                                marginLeft: -70,
+                                backgroundColor: 'transparent',
+                                spacingLeft: 0,
+                            },
+                            title: {
+                                text: ''
+                            },
+                            credits: { enabled: false },
+                            pane: {
+                                center: ['40%', '65%'],
+                                startAngle: -90,
+                                endAngle: 90,
+                                background: {
+                                    backgroundColor: 'transparent',
+                                    shape: 'arc',
+                                    borderColor: 'transparent',
+                                }
+                            },
+                            legend: {
+                                align: 'right',
+                                verticalAlign: 'center',
+                                layout: 'vertical',
+                                x: 0,
+                                squareSymbol: true
+                            },
+
+                            yAxis: {
+                                lineWidth: 0,
+                                tickPositions: []
+                            },
+                            plotOptions: {
+                                solidgauge: {
+                                    borderWidth: '5px',
+                                    dataLabels: {
+                                        enabled: false
+                                    },
+                                    linecap: false,
+                                    stickyTracking: false,
+                                    backgroundColor: 'transparent'
+                                },
+                                series: {
+                                    colorByPoint: false
+                                }
+                            },
+                            series: monthactivityGlobal
+                                .sort(function(a, b) {
+                                    return new Date(a[0]).getTime() > new Date(b[0]).getTime() ? -1 : 1;
+                                })
+                                .map(function(el, i) {
+                                    return {
+                                        name: el[0],
+                                        marker: { enabled: true },
+                                        borderColor: Highcharts.getOptions().colors[i],
+                                        data: [{
+                                            color: Highcharts.getOptions().colors[i],
+                                            radius: 10 * (13 - i) + "%",
+                                            innerRadius: 10 * (13 - i) + "%",
+                                            y: el[1]
+                                        }],
+                                        showInLegend: true
+                                    }
+                                })
+                        });
+                    }, 1000);
+
+                } else {
+                    $('#guage').html('<p>No data available</p>');
+                }
+
+            }
+
+            if (data.hasOwnProperty('social_interactions') && data.social_interactions.hasOwnProperty('user_mentions') && !_.isEmpty(data.social_interactions.user_mentions)) {
+                var highestCount = data.social_interactions.user_mentions[0].count;
+                var _h = '<table id="social-activity-table" style="width:100%" class="col-md-12"><tr><th style="color: #9599ac;font-size: 15px;margin-bottom: 20px;">Users</th><th style="color: #9599ac;font-size: 15px;margin-bottom: 20px;padding-right:5px !important">Interaction Affinity</th><th style="color: #9599ac;font-size: 15px;margin-bottom: 20px;">Interaction Level</th></tr>';
+
+
+                data.social_interactions.user_mentions.forEach(function(ele, i) {
+                    var dots_html = '<ul class="dots" data-percent="4">';
+                    for (var a = 0; a < 10; a++) {
+                        if ((a + 1) <= getAffinityLevel(highestCount, ele.count)) {
+                            dots_html = dots_html + '<li class="active"></li>';
+                        } else {
+                            dots_html = dots_html + '<li></li>';
+                        }
+                    }
+                    dots_html = dots_html + '</ul>';
+
+                    _h = _h + '<tr class="affinity-tr"><td class="affinity-cell">' + ele.user_mention + '</td><td class="affinity-cell"><img class="table-icon" src="dsense/like.svg" alt="">' + (ele.positive_sentiment - ele.negative_sentiment).toFixed(0) + '%</td><td class="affinity-cell">' + dots_html + '</td></tr>';
+
+                });
+
+                _h = _h + '</table>';
+            } else {
+                _h = '<p class="error-msg-p p-left">No data available</p>'
+
+            }
+
+            _html += '<div class="col-md-5 interactions-div" style="margin-left:60px;">' +
+                '<div class="row">' +
+                '<h3 class="head-3 interactions-heading" style="color:#11131e;margin-bottom: 0;"><span data-toggle="tooltip" title="The other users that the given user mentions, responds to or interacts with, along with \'affinity\' of their interaction" >Mostly Interacts With</span></h3>' +
+                '<div class="affinity-table" style="margin-bottom:0" id="interactions-table">' + _h + '' +
+                '</div></div></div></div>';
+
+        }
+
+
+
+    }
+
+    $('#socialActivityContainer').html(_html);
+
+}
+
+function createCustomerCareSection(data) {
+    var _r = data;
+    var _html = '';
+    var image = '';
+    if (!_.isEmpty(data.user_profile_image)) {
+        image = data.user_profile_image.replace('_normal', '');
+    }
+
+    _html += '<div class="col-md-6 resp-center">' +
+        '<div class="row">' +
+        '<div class="col-md-2 cc-dp-img">' +
+        '<div style="margin-left:20px;">' +
+        '<img  class="dp-img" src="' + image + '" id="cc-img" alt="" onerror="imgError(this);">' +
+        '</div>' +
+        '</div>';
+    var userid = '';
+    if (!_.isEmpty(data.user_name)) {
+        userid = '@' + data.user_name;
+    }
+
+    var htLo = '';
+    var locationArray = [];
+    if (data.demographics.hasOwnProperty('location') && data.demographics.location != undefined && data.demographics.location != null && data.demographics.location != '') {
+        if (data.demographics.location.hasOwnProperty('city') && data.demographics.location.city != '' && data.demographics.location.city != null && data.demographics.location.city != undefined) {
+            locationArray.push(data.demographics.location.city.replace('_', ' '));
+        }
+        if (data.demographics.location.hasOwnProperty('state') && data.demographics.location.state != '' && data.demographics.location.state != null && data.demographics.location.state != undefined) {
+            locationArray.push(data.demographics.location.state.replace('_', ' '));
+        }
+        if (data.demographics.location.hasOwnProperty('country') && data.demographics.location.country != '' && data.demographics.location.country != null && data.demographics.location.country != undefined) {
+            locationArray.push(data.demographics.location.country.replace('_', ' '));
+        }
+        htLo = '<i class="fa fa-map-marker"></i><span class="capitalize-txt" id="cc-location"><strong>' + locationArray.join(', ') + '</strong></span>';
+
+    } else {
+        htLo = '';
+    }
+    var influ = '';
+    if (persona.hasOwnProperty('influence') && persona.influence != '') {
+        if (persona.influence.split(' ').length < 3) {
+            influ = '<i class="fa fa-star"></i><span class="capitalize-txt"  id="cc-social-influence">' + persona.influence.split(' ')[0] + ' Social ' + persona.influence.split(' ')[1] + '</span>';
+        } else {
+            influ = '<i class="fa fa-star"></i><span class="capitalize-txt"  id="cc-social-influence">' + persona.influence.split(' ')[0] + ' ' + persona.influence.split(' ')[1] + ' Social ' + persona.influence.split(' ')[2] + '</span>';
+
+        }
+
+        var htBio = '';
+        if (data.demographics.hasOwnProperty('gender') && data.demographics.gender != '' && data.demographics.gender != null && data.demographics.gender != undefined) {
+            htBio = htBio + data.demographics.gender;
+        }
+        if (data.demographics.hasOwnProperty('employment_status') && data.demographics.employment_status.length != 0 && data.demographics.employment_status[0] != null && data.demographics.employment_status[0] != undefined) {
+            htBio = htBio + ', ' + data.demographics.employment_status[0];
+        }
+        if (!data.demographics.hasOwnProperty('profession') && data.demographics.profession.length == 0 && data.demographics.profession[0] != undefined && data.demographics.profession[0] != null) {
+            htBio = htBio + ', ' + data.demographics.profession[0];
+        }
+        if (!data.demographics.hasOwnProperty('gender') && data.demographics.gender == '' && !data.demographics.hasOwnProperty('employment_status') && data.demographics.employment_status.length == 0 && !data.demographics.hasOwnProperty('employment_status') && data.demographics.profession.length == 0) {
+            htBio = htBio + 'NA';
+        }
+
+        _html += '<div class="col-md-8" style="padding-left:13px">' +
+            '<div class="cc-bio-item">' +
+            '<i class="fa fa-twitter"></i><span id="cc-username">' + userid + '</span>' +
+            '</div>' +
+            '<div class="cc-bio-item">' +
+            htLo +
+            '</div>' +
+            '<div class="cc-bio-item">' +
+            influ +
+            '</div>' +
+            '<div class="cc-bio-item">' +
+            '<span class="capitalize-txt" id="cc-bio">' + htBio + '</span>' +
+            '</div>' +
+            '</div></div>';
+
+        _html += '<div class="social-buttons-slider"></div>';
+
+        var comm_html = '';
+        if (persona.hasOwnProperty('communication') && persona.communication.hasOwnProperty('style') && persona.communication.style != '') {
+            comm_html = 'Try to be ' + persona.communication.style;
+        } else {
+            comm_html = 'NA';
+        }
+
+        var example_html = '';
+        if (persona.hasOwnProperty('communication') && persona.communication.hasOwnProperty('example') && persona.communication.example != '') {
+            example_html = 'For Example, ' + persona.communication.example;
+        } else {
+            example_html = 'NA';
+        }
+
+        var lang_html = '';
+        if (data.languages.length != 0 && data.languages[0] != undefined && data.languages[0].hasOwnProperty('language') && data.languages[0].language != '') {
+            var lg = '';
+            var lgArr = [];
+            lgArr = data.languages.sort(function(a, b) {
+                return b.percent - a.percent;
+            })
+            for (var i = 0; i < lgArr.length; i++) {
+                if (lgArr[i].language != 'Undetermined') {
+                    lg = lgArr[i].language;
+                    break;
+                }
+            }
+            lang_html = data.languages[0].language;
+        } else {
+            lang_html = 'NA';
+        }
+
+
+
+        _html += '<h3 class="head-3-cc" style="color:black">Communication Advice</h3>' +
+            '<div id="comm-advice">' +
+            '<span id="cc-comm-approach" class="resp-center">' + comm_html +
+            '</span>' +
+            '<p class="cc-suggestion mb-10 resp-center">' +
+            '<i id="cc-example" class="resp-center" style="width:80%" class="mb-10"></i>' + example_html + '</p>' +
+            '<p><strong>Primary Language :</strong>' +
+            '<span id="cc-lang">' + lang_html + '</span></p>' +
+            '</div>' +
+            '<h3 class="head-3-cc" style="color:black">Brand Usage</h3>' +
+            '<div id="comp-usage">' +
+            '</div>' +
+            '</div>';
+
+        var _html_int = '';
+        if (_r.hasOwnProperty("interests") && _r.interests.length != 0 && !_.isEmpty(_r.interests)) {
+
+            _html_int += '<div class="interest_block mt-10"><div class="text-right"><select class="form-control input-sm" id="interest_selector">';
+
+            _r.interests.forEach(function(el, i) {
+                _html_int += '<option  value="' + i + '">' + el.interest.replace(/-/g, " ") + '</option>';
+            });
+
+            _html_int += '</select></div>';
+
+            _html_int += '</div>';
+            $('#cc-ints-holder').show();
+        } else {
+            _html_int = '<p class="error-msg-p">No data available</p>';
+            $('#cc-ints-holder').hide();
+        }
+
+        _html += '<div class="col-md-6 resp-center">' +
+            '<div id="cc-ints-holder" style="display:none">' +
+            '<div class="col-md-4">' +
+            '<h3 class="head-3-cc mt-10 resp-center resp-mt-30" style="color:black;margin-top:0">Interests</h3>' +
+            '</div>' +
+            '<div class="col-md-8">' +
+            '<div id="cc-ints" class="resp-center">' + _html_int +
+            '</div>' +
+            '</div>' +
+            '<div id="cc-ints-data" class="resp-center"></div>' +
+            '</div>';
+
+
+
+        var personality_html = '';
+        if (data.hasOwnProperty('personality_analysis') && data.personality_analysis.hasOwnProperty('personality_description') && data.personality_analysis.personality_description != '' && data.personality_analysis.personality_description != null) {
+            personality_html = data.personality_analysis.personality_description;
+        } else {
+            personality_html = '<p class="error-msg-p">No data available</p>';
+        }
+
+        _html = '<h3 class="head-3-cc resp-center" style="color:black">Personality</h3>' +
+            '<div id="cc-personality" class="resp-center">' + personality_html +
+            '</div>' +
+            '</div>';
+
+
+    }
+}
+
+function getLastMonths() {
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    var today = new Date();
+    var d;
+    var month;
+    var retArr = [];
+
+    for(var i = 0; i < 10; i++) {
+        d = new Date(today.getFullYear(), today.getMonth() - i , 1);
+		
+        month = monthNames[(d.getMonth())%12] + ", " +d.getFullYear();
+        retArr.push(month);
+    }
+
+    return retArr;
+}
