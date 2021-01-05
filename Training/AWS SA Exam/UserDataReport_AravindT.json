@@ -1,0 +1,31 @@
+{
+  "user": {
+    "id": "9sJBrULFjES4IRazkrqErw2",
+    "fullName": "Aravind T",
+    "email": "aravindt.appinventor@gmail.com",
+    "companyName": null,
+    "businessTitle": null,
+    "preferredLanguage": "en-US",
+    "country": "USA",
+    "preferredTimeZone": "America/New_York",
+    "roleId": null,
+    "audience": "Customers"
+  },
+  "transcripts": [],
+  "orders": [],
+  "subscriptions": [],
+  "externalIdentities": [
+    {
+      "system": "Amazon.com",
+      "externalId": "95492295202",
+      "email": "aravindt.appinventor@gmail.com",
+      "lastUsedDate": "7 February, 2019 @ 10:28 PM"
+    },
+    {
+      "system": "CertMetrics",
+      "externalId": "AWS00790595",
+      "email": "",
+      "lastUsedDate": "7 February, 2019 @ 10:29 PM"
+    }
+  ]
+}
